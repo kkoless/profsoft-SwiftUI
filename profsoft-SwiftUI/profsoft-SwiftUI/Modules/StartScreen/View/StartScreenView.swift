@@ -10,63 +10,80 @@ import SwiftUI
 struct StartScreenView: View {
 	
 //	@EnvironmentObject var settingModel: AppSetting
-	@ObservedObject var viewModel: StartScreenViewModel = StartScreenViewModel()
 	
-	@State var isHiddenTextField = false
-	@State private var isActive = false
-	@State private var isActiveSheet = false
+	@ObservedObject private var viewModel: StartScreenViewModel
 	
 	@State private var link: AppStep? = nil
 	
+	init(viewModel: StartScreenViewModel) {
+		self.viewModel = viewModel
+	}
+	
 	var body: some View {
 		content
-			.navigate(using: $link, flow: .onboarding)
-		
 	}
+		
+//		content
+//			.navigate(using: $link, flow: .onboarding)
+		
 }
 
 private extension StartScreenView {
-	
-	var content: some View {
-		VStack {
-			
-			Button(
-				action: { link = .start },
-				label: {
-				Text("link")
-			})
-		}
-	}
-	
-	var titleView: some View {
-		Text(" This is ScrollView")
-	}
-	
-	var listUsersView: some View {
-		ScrollView {
-			HStack {
-				ForEach(viewModel.array,
-						content: userCellView(_:))
+
+	@ViewBuilder var content: some View {
+		switch viewModel.screenState {
+		case .processing:
+			processingState
+		case .loaded:
+			loadedState
+		case .error(let errorState):
+			switch errorState {
+			case .global:
+				loadedState
+			case .parsing:
+				loadedState
 			}
 		}
-		.background(Color.orange)
 	}
-	
-	func userCellView(_ user: User) -> some View {
-		Text(user.name)
-			.frame(maxWidth: .infinity)
-	}
-}
 
-private extension StartScreenView {
+	var processingState: some View {
+		VStack {
+			Spacer()
+		}
+	}
+
+	var loadedState: some View {
+		VStack(spacing: 0) {
+			Spacer()
+			enterButton
+				.padding(.horizontal, 16)
+				.padding(.bottom, 15)
+			skipButton
+				.padding(.horizontal, 16)
+				.padding(.bottom, 20)
+		}
+	}
+
+	var enterButton: some View {
+		BaseButton(foregroundColor: .white, backgroundColor: .black, buttonLabel: "Вход", step: .start) {
+
+		}
+	}
 	
+	var skipButton: some View {
+		BaseButton(foregroundColor: .black, backgroundColor: .white, buttonLabel: "Продолжить без регистрации", step: .start) {
+
+		}
+	}
+
 }
 
 struct StartScreenView_Previews: PreviewProvider {
 	static var previews: some View {
-		StartScreenView()
+		StartScreenView(viewModel: StartScreenViewModel())
 	}
 }
+
 
 extension View {
 	

@@ -8,35 +8,29 @@
 import Foundation
 import Combine
 
-struct User: Identifiable {
-	let id = UUID().uuidString
-	let name: String
-}
-
 final class StartScreenViewModel: ObservableObject {
-	
-	@Published var array: [User] = [] {
-		didSet {
-			print(array)
-		}
-	}
-	
-	@Published var login = ""
-	
-	init() {
-		loadUser()
-	}
+
+	@Published private(set) var screenState: ScreenState = .loaded
+
+	private var productMethodState: MethodState = .success
+	private var cancellable = Set<AnyCancellable>()
 }
 
-private extension StartScreenViewModel {
-	
-	func loadUser() {
-		DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-			guard let self = self else { return }
-			self.array = [
-				User(name: "Tom"),
-				User(name: "Jon"),
-				User(name: "Kevin")]
-		}
+extension StartScreenViewModel {
+
+	enum ScreenState {
+		case processing // экран грузится
+		case loaded // экран загрузился
+		case error(ErrorState) // ошибка
+	}
+
+	enum ErrorState {
+		case global
+		case parsing
+	}
+
+	enum MethodState {
+		case error
+		case success
 	}
 }

@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct profsoft_SwiftUIApp: App {
 	
+	@StateObject var viewModel = StartScreenViewModel()
 	
 	var body: some Scene {
 		WindowGroup {
 			NavigationView {
-				StartScreenView()
+				StartScreenView(viewModel: viewModel)
 			}
 		}
 	}

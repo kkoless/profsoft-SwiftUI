@@ -13,12 +13,11 @@ struct OnboardingFlow {
 	@ViewBuilder static func build(_ step: AppStep) -> some View {
 		switch step {
 			case . start: navigationToStartScreen()
-			
 		}
 	}
 	
 	static func navigationToStartScreen() -> some View {
-		StartScreenView()
+		StartScreenView(viewModel: StartScreenViewModel())
 	}
 
 }
