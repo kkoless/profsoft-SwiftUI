@@ -55,6 +55,12 @@ private extension StartScreenView {
 	var loadedState: some View {
 		VStack(spacing: 0) {
 			Spacer()
+//				.frame(height:349)
+			companyLogo
+				.padding(.horizontal, 78)
+				.padding(.bottom, 223)
+//			Spacer()
+//				.frame(height: 223)
 			enterButton
 				.padding(.horizontal, 16)
 				.padding(.bottom, 15)
@@ -62,6 +68,10 @@ private extension StartScreenView {
 				.padding(.horizontal, 16)
 				.padding(.bottom, 20)
 		}
+	}
+	
+	var companyLogo: some View {
+		CompanyLogo()
 	}
 
 	var enterButton: some View {

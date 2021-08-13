@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E50EF18726C677ED00211D19 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18626C677ED00211D19 /* BaseButton.swift */; };
+		E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18926C6F49900211D19 /* CompanyLogo.swift */; };
 		E51B403F26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B403E26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift */; };
 		E51B404326C51E2E006BFDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51B404226C51E2E006BFDDA /* Assets.xcassets */; };
 		E51B404626C51E2E006BFDDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51B404526C51E2E006BFDDA /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		E50EF18626C677ED00211D19 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		E50EF18926C6F49900211D19 /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		E51B403B26C51E2E006BFDDA /* profsoft-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "profsoft-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51B403E26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profsoft_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E51B404226C51E2E006BFDDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		E50EF18826C6F2CA00211D19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E50EF18926C6F49900211D19 /* CompanyLogo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51B406726C52958006BFDDA /* AppFlow.swift in Sources */,
+				E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */,
 				E51B403F26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift in Sources */,
 				E51B406326C5290B006BFDDA /* View+Extensions.swift in Sources */,
 				E51B405C26C52545006BFDDA /* StartScreenView.swift in Sources */,
