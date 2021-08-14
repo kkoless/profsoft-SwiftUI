@@ -26,10 +26,6 @@ struct CompanyLogo: View {
     }
 }
 
-extension CompanyLogo {
-	
-}
-
 struct CompanyLogo_Previews: PreviewProvider {
     static var previews: some View {
         CompanyLogo()

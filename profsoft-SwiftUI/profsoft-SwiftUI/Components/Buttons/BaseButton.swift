@@ -38,7 +38,7 @@ extension BaseButton {
 		.frame(height: 50)
 		.background(backgroundColor)
 		.cornerRadius(25)
-		.overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.black, lineWidth: 2))
+		.overlay(RoundedRectangle(cornerRadius: 25).stroke(backgroundColor, lineWidth: 2))
 	}
 	
 }
