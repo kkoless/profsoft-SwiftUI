@@ -9,11 +9,10 @@ import SwiftUI
 
 struct LoginScreenView: View {
 	
-//	@EnvironmentObject var settingModel: AppSetting
-	
 	@ObservedObject private var viewModel: LoginScreenViewModel
 	
 	@State private var link: AppStep? = nil
+	@State private var showingAlert = false
 	
 	init(viewModel: LoginScreenViewModel) {
 		self.viewModel = viewModel
@@ -22,9 +21,6 @@ struct LoginScreenView: View {
 	var body: some View {
 		content
 	}
-		
-//		content
-//			.navigate(using: $link, flow: .onboarding)
 		
 }
 
@@ -54,14 +50,16 @@ private extension LoginScreenView {
 
 	var loadedState: some View {
 		VStack(spacing: 0) {
-			Spacer()
 			companyLogo
 				.padding(.horizontal, 78)
-				.padding(.bottom, 192)
+				.padding(.top, 217)
+			
+			Spacer()
+			
 			loginForm
 				.padding(.horizontal, 16)
 				.padding(.bottom, 116)
-			forgotPasswordLabel
+			forgotPasswordButton
 				.padding(.bottom, 20)
 				.padding(.horizontal, 16)
 				.frame(alignment: .leading)
@@ -79,12 +77,18 @@ private extension LoginScreenView {
 		LoginForm()
 	}
 	
-	var forgotPasswordLabel: some View {
-		BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading)
+	var forgotPasswordButton: some View {
+		Button(
+			action: { showingAlert = true }) {
+			BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading)
+		}
+		.alert(isPresented: $showingAlert) {
+			Alert(title: Text("Забыли пароль?").bold(), message: Text("Напишите в поддержку academy@profsoft.pro"), dismissButton: .cancel(Text("Вернуться")))
+}
 	}
 	
 	var enterButton: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .gray, buttonLabel: "Вход", step: .start) {
+		BaseButton(foregroundColor: .white, backgroundColor: .gray, borderColor: .gray, buttonLabel: "Вход", step: .start) {
 
 		}
 	}

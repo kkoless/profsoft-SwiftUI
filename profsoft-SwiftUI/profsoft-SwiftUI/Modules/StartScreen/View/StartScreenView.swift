@@ -9,8 +9,6 @@ import SwiftUI
 
 struct StartScreenView: View {
 	
-//	@EnvironmentObject var settingModel: AppSetting
-	
 	@ObservedObject private var viewModel: StartScreenViewModel
 	
 	@State private var link: AppStep? = nil
@@ -21,10 +19,8 @@ struct StartScreenView: View {
 	
 	var body: some View {
 		content
+			.navigate(using: $link, flow: .onboarding)
 	}
-		
-//		content
-//			.navigate(using: $link, flow: .onboarding)
 		
 }
 
@@ -32,17 +28,17 @@ private extension StartScreenView {
 
 	@ViewBuilder var content: some View {
 		switch viewModel.screenState {
-		case .processing:
-			processingState
-		case .loaded:
-			loadedState
-		case .error(let errorState):
-			switch errorState {
-			case .global:
+			case .processing:
+				processingState
+			case .loaded:
 				loadedState
-			case .parsing:
-				loadedState
-			}
+			case .error(let errorState):
+				switch errorState {
+					case .global:
+						loadedState
+					case .parsing:
+						loadedState
+				}
 		}
 	}
 
@@ -72,13 +68,13 @@ private extension StartScreenView {
 	}
 
 	var enterButton: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .black, buttonLabel: "Вход", step: .start) {
-
+		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход", step: .start) {
+			link = .login
 		}
 	}
 	
 	var skipButton: some View {
-		BaseButton(foregroundColor: .black, backgroundColor: .white, buttonLabel: "Продолжить без регистрации", step: .start) {
+		BaseButton(foregroundColor: .black, backgroundColor: .white, borderColor: .black, buttonLabel: "Продолжить без регистрации", step: .start) {
 
 		}
 	}

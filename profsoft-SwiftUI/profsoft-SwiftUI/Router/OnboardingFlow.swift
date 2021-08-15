@@ -12,7 +12,8 @@ struct OnboardingFlow {
 	
 	@ViewBuilder static func build(_ step: AppStep) -> some View {
 		switch step {
-			case . start: navigationToStartScreen()
+			case .start: navigationToStartScreen()
+			case .login: navigationToLoginScreen()
 		}
 	}
 	
@@ -20,4 +21,7 @@ struct OnboardingFlow {
 		StartScreenView(viewModel: StartScreenViewModel())
 	}
 
+	static func navigationToLoginScreen() -> some View {
+		LoginScreenView(viewModel: LoginScreenViewModel()).navigationBarHidden(true)
+	}
 }

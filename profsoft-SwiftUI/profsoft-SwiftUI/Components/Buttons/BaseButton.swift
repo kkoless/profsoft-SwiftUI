@@ -12,6 +12,7 @@ struct BaseButton: View {
 	//@State private var link: AppStep? = nil
 	let foregroundColor: Color
 	let backgroundColor: Color
+	let borderColor: Color
 	let buttonLabel: String
 	let step: AppStep
 	
@@ -38,14 +39,14 @@ extension BaseButton {
 		.frame(height: 50)
 		.background(backgroundColor)
 		.cornerRadius(25)
-		.overlay(RoundedRectangle(cornerRadius: 25).stroke(backgroundColor, lineWidth: 2))
+		.overlay(RoundedRectangle(cornerRadius: 25).stroke(borderColor, lineWidth: 2))
 	}
 	
 }
 
 struct BaseButton_Previews: PreviewProvider {
     static var previews: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .black, buttonLabel: "Вход", step: .start){
+		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход", step: .start){
 			
 		}
     }

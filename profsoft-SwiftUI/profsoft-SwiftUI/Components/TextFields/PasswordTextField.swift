@@ -9,15 +9,15 @@ import SwiftUI
 
 struct PasswordTextField: View {
 	
-	@State var password: String = ""
-	@State private var secured: Bool = true
+	@Binding var password: String
+	@Binding var isSecured: Bool
 	
 	var body: some View {
 		
 		HStack {
 			
 			ZStack(alignment: .trailing)  {
-				if self.secured {
+				if self.isSecured {
 					SecureField("Пароль", text: $password)
 						.padding(.horizontal)
 						.frame(height: 50)
@@ -30,8 +30,8 @@ struct PasswordTextField: View {
 					BaseTextField(placeholder: "Пароль", text: $password)
 				}
 				
-				Button(action: { self.secured.toggle() }) {
-					Image(self.secured ? "eye-close" : "eye-open")
+				Button(action: { isSecured.toggle() }) {
+					Image( isSecured ? "eye-close" : "eye-open")
 				}
 				.alignmentGuide(.trailing) { _ in 40 }
 				
@@ -44,6 +44,6 @@ struct PasswordTextField: View {
 
 struct PasswordTextField_Previews: PreviewProvider {
     static var previews: some View {
-        PasswordTextField()
+		PasswordTextField(password: .constant("123"), isSecured: .constant(true))
     }
 }
