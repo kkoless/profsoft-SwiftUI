@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LoginScreenView: View {
 	
 	@ObservedObject private var viewModel: LoginScreenViewModel
+	
+	@StateObject private var keyboardHandler = KeyboardHandler()
 	
 	@State private var link: AppStep? = nil
 	@State private var showingAlert = false
@@ -49,24 +52,30 @@ private extension LoginScreenView {
 	}
 
 	var loadedState: some View {
-		VStack(spacing: 0) {
-			companyLogo
-				.padding(.horizontal, 78)
-				.padding(.top, 217)
-			
+		VStack{
 			Spacer()
 			
-			loginForm
-				.padding(.horizontal, 16)
-				.padding(.bottom, 116)
-			forgotPasswordButton
-				.padding(.bottom, 20)
-				.padding(.horizontal, 16)
-				.frame(alignment: .leading)
-			enterButton
-				.padding(.horizontal, 16)
-				.padding(.bottom, 20)
+			VStack(spacing: 0) {
+				companyLogo
+					.padding(.horizontal, 78)
+					//.padding(.top, 217)
+					.padding(.bottom, 193)
+				
+				loginForm
+					.padding(.horizontal, 16)
+					.padding(.bottom, 116)
+				forgotPasswordButton
+					.padding(.bottom, 20)
+					.padding(.horizontal, 16)
+					.frame(alignment: .leading)
+				enterButton
+					.padding(.horizontal, 16)
+					.padding(.bottom, 20)
+			}
 		}
+		//.padding(.bottom, keyboardHandler.keyboardHeight - 100)
+		.animation(.spring())
+		
 	}
 	
 	var companyLogo: some View {
@@ -102,9 +111,9 @@ struct LoginScreenView_Previews: PreviewProvider {
 }
 
 
-extension View {
-	
-	func hideKeyboard() {
-		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-	}
-}
+//extension View {
+//	
+//	func hideKeyboard() {
+//		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//	}
+//}

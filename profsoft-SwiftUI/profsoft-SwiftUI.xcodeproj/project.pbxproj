@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E500BFAC26C9A645007B3BDF /* KeyboadrHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFAB26C9A645007B3BDF /* KeyboadrHandler.swift */; };
+		E500BFAE26CA6EFE007B3BDF /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFAD26CA6EFE007B3BDF /* EmailTextField.swift */; };
 		E50EF18726C677ED00211D19 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18626C677ED00211D19 /* BaseButton.swift */; };
 		E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18926C6F49900211D19 /* CompanyLogo.swift */; };
 		E50EF18E26C8415100211D19 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18D26C8415100211D19 /* LoginScreenView.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E500BFAB26C9A645007B3BDF /* KeyboadrHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboadrHandler.swift; sourceTree = "<group>"; };
+		E500BFAD26CA6EFE007B3BDF /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		E50EF18626C677ED00211D19 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		E50EF18926C6F49900211D19 /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		E50EF18D26C8415100211D19 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				E50EF19726C847DC00211D19 /* BaseTextField.swift */,
 				E50EF19926C84B6900211D19 /* PasswordTextField.swift */,
+				E500BFAD26CA6EFE007B3BDF /* EmailTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				E51B406426C52928006BFDDA /* Extensions */,
+				E500BFAB26C9A645007B3BDF /* KeyboadrHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E500BFAE26CA6EFE007B3BDF /* EmailTextField.swift in Sources */,
 				E50EF18E26C8415100211D19 /* LoginScreenView.swift in Sources */,
 				E50EF19326C842BF00211D19 /* BaseText.swift in Sources */,
 				E50EF19826C847DC00211D19 /* BaseTextField.swift in Sources */,
@@ -344,6 +351,7 @@
 				E50EF18726C677ED00211D19 /* BaseButton.swift in Sources */,
 				E51B406026C525F4006BFDDA /* StartScreenViewModel.swift in Sources */,
 				E51B405A26C52431006BFDDA /* OnboardingFlow.swift in Sources */,
+				E500BFAC26C9A645007B3BDF /* KeyboadrHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
