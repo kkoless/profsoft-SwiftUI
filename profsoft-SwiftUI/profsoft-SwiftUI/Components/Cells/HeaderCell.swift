@@ -12,6 +12,7 @@ struct HeaderCell: View {
 	@State private var userImageTap: Bool = false
 	@State private var isShowPhotoLibrary = false
 	@State private var image = UIImage()
+	@State private var isFirstImage = true
 	
 	var body: some View {
 		content
@@ -29,14 +30,18 @@ extension HeaderCell {
 		
 			HStack(alignment: .bottom, spacing: 0) {
 				
-				Button(action: { isShowPhotoLibrary.toggle() }) {
-					Image(uiImage: image)
+				Button(action: {
+						isShowPhotoLibrary.toggle()
+						isFirstImage = false
+				}) {
+					Image(uiImage: isFirstImage ? UIImage(named: "userImage")! : image)
 						.resizable()
 						.aspectRatio(contentMode: .fill)
+						.cornerRadius(12)
 				}
 				.frame(width: 150, height: 150)
-				.cornerRadius(12)
 				.background(Image("userImageTap"))
+				.cornerRadius(12)
 				
 				VStack(alignment: .leading, spacing: 0) {
 					Text("КОЖИН АЛЕКСАНДР СЕРГЕЕВИЧ").bold()
