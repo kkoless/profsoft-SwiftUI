@@ -9,9 +9,5 @@ import Foundation
 import SwiftUI
 
 enum AppFlow {
-	case onboarding
-//	case dashboard
-//	case profile
-//	case search
-//	case general
+	case general
 }

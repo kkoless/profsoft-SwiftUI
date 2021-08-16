@@ -19,7 +19,7 @@ struct StartScreenView: View {
 	
 	var body: some View {
 		content
-			.navigate(using: $link, flow: .onboarding)
+			.navigate(using: $link, flow: .general)
 	}
 		
 }
@@ -68,14 +68,14 @@ private extension StartScreenView {
 	}
 
 	var enterButton: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход", step: .start) {
+		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход") {
 			link = .login
 		}
 	}
 	
 	var skipButton: some View {
-		BaseButton(foregroundColor: .black, backgroundColor: .white, borderColor: .black, buttonLabel: "Продолжить без регистрации", step: .start) {
-
+		BaseButton(foregroundColor: .black, backgroundColor: .white, borderColor: .black, buttonLabel: "Продолжить без регистрации") {
+			link = .dashboard
 		}
 	}
 

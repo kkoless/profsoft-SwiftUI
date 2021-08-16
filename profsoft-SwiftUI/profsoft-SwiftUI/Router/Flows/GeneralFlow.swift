@@ -8,12 +8,13 @@
 import SwiftUI
 
 
-struct OnboardingFlow {
+struct GeneralFlow {
 	
 	@ViewBuilder static func build(_ step: AppStep) -> some View {
 		switch step {
 			case .start: navigationToStartScreen()
 			case .login: navigationToLoginScreen()
+			case .dashboard: navigationToDashboardScreen()
 		}
 	}
 	
@@ -24,4 +25,9 @@ struct OnboardingFlow {
 	static func navigationToLoginScreen() -> some View {
 		LoginScreenView(viewModel: LoginScreenViewModel()).navigationBarHidden(true)
 	}
+	
+	static func navigationToDashboardScreen() -> some View {
+		DashboardScreenView(viewModel: DashboardScreenViewModel()).navigationBarHidden(true)
+	}
+
 }

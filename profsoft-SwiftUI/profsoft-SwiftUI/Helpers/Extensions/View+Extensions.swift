@@ -36,10 +36,8 @@ extension NavigationLink where Label == EmptyView {
 		
 		var destination:  some View {
 			switch flow {
-				case .onboarding: return OnboardingFlow.build(step).toAnyView()
+				case .general: return GeneralFlow.build(step).toAnyView()
 					
-				default:
-					return OnboardingFlow.build(step).toAnyView()
 			}
 		}
 

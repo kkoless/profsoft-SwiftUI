@@ -21,6 +21,7 @@ struct LoginScreenView: View {
 	
 	var body: some View {
 		content
+			.navigate(using: $link, flow: .general)
 	}
 		
 }
@@ -104,8 +105,8 @@ private extension LoginScreenView {
 	}
 	
 	var enterButton: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .gray, borderColor: .gray, buttonLabel: "Вход", step: .start) {
-
+		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход") {
+			link = .dashboard
 		}
 	}
 

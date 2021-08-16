@@ -10,6 +10,7 @@ import SwiftUI
 enum AppStep {
 	case start
 	case login
+	case dashboard
 	
 	//case none
 }

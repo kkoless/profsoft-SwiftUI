@@ -14,7 +14,6 @@ struct BaseButton: View {
 	let backgroundColor: Color
 	let borderColor: Color
 	let buttonLabel: String
-	let step: AppStep
 	
 	let onTap: () -> Void
 	
@@ -46,7 +45,7 @@ extension BaseButton {
 
 struct BaseButton_Previews: PreviewProvider {
     static var previews: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход", step: .start){
+		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход"){
 			
 		}
     }

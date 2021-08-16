@@ -38,9 +38,9 @@ struct PasswordTextField: View {
 						Image(
 							checkValid()
 								?
-								(isSecured ? "eye-close" : "eye-open")
+								(isSecured ? "eye-open" : "eye-close")
 								:
-								(isSecured ? "red-eye-close" : "red-eye-open")
+								(isSecured ? "red-eye-open" : "red-eye-close")
 						)
 					}
 					.alignmentGuide(.trailing) { _ in 40 }
