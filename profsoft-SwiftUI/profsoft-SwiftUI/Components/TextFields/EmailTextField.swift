@@ -21,6 +21,9 @@ struct EmailTextField: View {
 			if !checkValid() {
 				emailLabelError
 			}
+			else {
+				emptyBlock
+			}
 			
 			BaseTextField(placeholder: "Email", text: $email, borderColor: checkValid() ? .constant(.black): .constant(.red), foregroundColor: checkValid() ? .constant(.black): .constant(.red))
 		}
@@ -47,6 +50,12 @@ extension EmailTextField {
 			
 			Spacer()
 		}
+	}
+	
+	var emptyBlock: some View {
+		Text("")
+			.padding(.bottom, 7)
+			.padding(.horizontal, 26)
 	}
 	
 }

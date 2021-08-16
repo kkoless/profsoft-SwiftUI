@@ -12,8 +12,6 @@ struct LoginScreenView: View {
 	
 	@ObservedObject private var viewModel: LoginScreenViewModel
 	
-	@StateObject private var keyboardHandler = KeyboardHandler()
-	
 	@State private var link: AppStep? = nil
 	@State private var showingAlert = false
 	
@@ -73,7 +71,6 @@ private extension LoginScreenView {
 					.padding(.bottom, 20)
 			}
 		}
-		//.padding(.bottom, keyboardHandler.keyboardHeight - 100)
 		.animation(.spring())
 		
 	}
@@ -110,10 +107,3 @@ struct LoginScreenView_Previews: PreviewProvider {
 	}
 }
 
-
-//extension View {
-//	
-//	func hideKeyboard() {
-//		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-//	}
-//}

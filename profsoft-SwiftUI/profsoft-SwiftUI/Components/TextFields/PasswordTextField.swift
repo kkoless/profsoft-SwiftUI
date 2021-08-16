@@ -12,7 +12,7 @@ struct PasswordTextField: View {
 	private let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
 	
 	@Binding var password: String
-	@State var isSecured: Bool = true
+	@State private var isSecured: Bool = true
 	
 	var body: some View {
 		
@@ -52,6 +52,10 @@ struct PasswordTextField: View {
 			if !checkValid() {
 				passwordLabelError
 			}
+			else {
+				emptyBlock
+			}
+			
 		}
 		
 	}
@@ -76,6 +80,12 @@ extension PasswordTextField {
 			
 			Spacer()
 		}
+	}
+	
+	var emptyBlock: some View {
+		Text("")
+			.padding(.top, 7)
+			.padding(.horizontal, 26)
 	}
 	
 }
