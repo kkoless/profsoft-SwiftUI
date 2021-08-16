@@ -52,7 +52,8 @@ private extension DashboardScreenView {
 	var loadedState: some View {
 		TabView {
 			
-			LoginScreenView(viewModel: LoginScreenViewModel())
+			//LoginScreenView(viewModel: LoginScreenViewModel())
+			Text("home")
 				.tabItem {
 					Image("home")
 				}
@@ -62,10 +63,11 @@ private extension DashboardScreenView {
 					Image("search")
 				}
 			
-			Text("profile")
+			ProfileScreenView(viewModel: ProfileScreenViewModel())
 				.tabItem {
 					Image("profile")
 				}
+				.navigationBarHidden(true)
 			
 		}
 		
