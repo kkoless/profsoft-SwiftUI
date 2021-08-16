@@ -51,17 +51,28 @@ private extension LoginScreenView {
 
 	var loadedState: some View {
 		VStack{
+			
+			Spacer()
+			Spacer()
+			
+			VStack {
+				Spacer()
+				Spacer()
+				companyLogo
+					.padding(.horizontal, 78)
+				
+				Spacer()
+				Spacer()
+				loginForm
+					.padding(.horizontal, 16)
+				
+				Spacer()
+			}
+			
 			Spacer()
 			
 			VStack(spacing: 0) {
-				companyLogo
-					.padding(.horizontal, 78)
-					//.padding(.top, 217)
-					.padding(.bottom, 193)
 				
-				loginForm
-					.padding(.horizontal, 16)
-					.padding(.bottom, 116)
 				forgotPasswordButton
 					.padding(.bottom, 20)
 					.padding(.horizontal, 16)
@@ -71,7 +82,6 @@ private extension LoginScreenView {
 					.padding(.bottom, 20)
 			}
 		}
-		.animation(.spring())
 		
 	}
 	
