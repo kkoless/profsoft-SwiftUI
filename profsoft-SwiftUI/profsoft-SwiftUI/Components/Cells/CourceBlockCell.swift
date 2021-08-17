@@ -51,7 +51,7 @@ extension CourceBlockCell {
 					Image("certificate")
 						.resizable()
 						.scaledToFill()
-						.padding(.bottom, 5)
+						.padding(.bottom, 10)
 					
 					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, aligment: .leading, underline: true)
 						.padding(.bottom, 10)

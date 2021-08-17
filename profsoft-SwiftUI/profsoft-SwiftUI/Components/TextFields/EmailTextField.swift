@@ -34,13 +34,6 @@ struct EmailTextField: View {
 extension EmailTextField {
 	
 	func checkValid() -> Bool {
-		
-		for fontFamily in UIFont.familyNames {
-			for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
-				print("\(fontName)")
-			}
-		}
-		
 		if !emailPredicate.evaluate(with: email) && !email.isEmpty {
 			return false
 		}

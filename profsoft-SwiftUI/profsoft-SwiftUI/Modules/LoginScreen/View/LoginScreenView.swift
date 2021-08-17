@@ -59,18 +59,19 @@ private extension LoginScreenView {
 			VStack {
 				Spacer()
 				Spacer()
+				Spacer()
+				
 				companyLogo
 					.padding(.horizontal, 78)
 				
 				Spacer()
 				Spacer()
+				
 				loginForm
 					.padding(.horizontal, 16)
 				
 				Spacer()
 			}
-			
-			Spacer()
 			
 			VStack(spacing: 0) {
 				
