@@ -73,7 +73,7 @@ extension PasswordTextField {
 	var passwordLabelError: some View {
 		HStack {
 			Text("Пароль должен быть не менее 6 символов")
-				.font(.system(size: 11, weight: .regular))
+				.font(Font.custom("Golos", size: 11).weight(.regular))
 				.foregroundColor(.red)
 				.padding(.top, 7)
 				.padding(.horizontal, 26)

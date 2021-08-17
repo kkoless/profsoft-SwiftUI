@@ -40,6 +40,7 @@ extension BaseTextField {
 					text: $text)
 			.padding(.horizontal)
 			.frame(height: 50)
+			.font(Font.custom("GolosText-DemiBold", size: 16))
 			.frame(maxWidth: .infinity)
 			.foregroundColor(foregroundColor)
 			.background(Color.white)

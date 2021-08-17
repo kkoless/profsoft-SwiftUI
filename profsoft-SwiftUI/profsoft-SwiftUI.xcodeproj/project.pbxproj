@@ -17,6 +17,8 @@
 		E500BFC726CBADC4007B3BDF /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC626CBADC4007B3BDF /* CourseCell.swift */; };
 		E500BFC926CBB204007B3BDF /* CourceBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */; };
 		E500BFCB26CBB343007B3BDF /* ShowMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */; };
+		E500BFCE26CBC75F007B3BDF /* Golos Text_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E500BFCD26CBC75F007B3BDF /* Golos Text_Medium.ttf */; };
+		E500BFD026CBCD51007B3BDF /* Golos Text_DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E500BFCF26CBCD51007B3BDF /* Golos Text_DemiBold.ttf */; };
 		E50EF18726C677ED00211D19 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18626C677ED00211D19 /* BaseButton.swift */; };
 		E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18926C6F49900211D19 /* CompanyLogo.swift */; };
 		E50EF18E26C8415100211D19 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18D26C8415100211D19 /* LoginScreenView.swift */; };
@@ -47,6 +49,8 @@
 		E500BFC626CBADC4007B3BDF /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourceBlockCell.swift; sourceTree = "<group>"; };
 		E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButton.swift; sourceTree = "<group>"; };
+		E500BFCD26CBC75F007B3BDF /* Golos Text_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Golos Text_Medium.ttf"; sourceTree = "<group>"; };
+		E500BFCF26CBCD51007B3BDF /* Golos Text_DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Golos Text_DemiBold.ttf"; sourceTree = "<group>"; };
 		E50EF18626C677ED00211D19 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		E50EF18926C6F49900211D19 /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		E50EF18D26C8415100211D19 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 				E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E500BFCC26CBC736007B3BDF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E500BFCD26CBC75F007B3BDF /* Golos Text_Medium.ttf */,
+				E500BFCF26CBCD51007B3BDF /* Golos Text_DemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E50EF18526C677D800211D19 /* Buttons */ = {
@@ -241,6 +254,7 @@
 		E51B404E26C51ED6006BFDDA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E500BFCC26CBC736007B3BDF /* Fonts */,
 				E51B404226C51E2E006BFDDA /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -405,6 +419,8 @@
 			files = (
 				E51B404626C51E2E006BFDDA /* Preview Assets.xcassets in Resources */,
 				E51B404326C51E2E006BFDDA /* Assets.xcassets in Resources */,
+				E500BFCE26CBC75F007B3BDF /* Golos Text_Medium.ttf in Resources */,
+				E500BFD026CBCD51007B3BDF /* Golos Text_DemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

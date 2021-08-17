@@ -55,12 +55,18 @@ private extension ProfileScreenView {
 			VStack(spacing: 0){
 				headerCell
 				
-				BaseText(text: "МОИ КУРСЫ", foregroundColor: .black, fontSize: 15, fontWeight: .semibold, aligment: .leading, underline: nil)
+				Text("МОИ КУРСЫ")
+					.foregroundColor(.black)
+					.font(Font.custom("GolosText-DemiBold", size: 15))
+					.frame(maxWidth: .infinity, alignment: .leading)
 					.padding(.horizontal, 18)
-					.padding(.top, 20)
-					.padding(.bottom, 20)
+					.padding(.top, 15)
+					.padding(.bottom, 15)
 				
 				//ForEach cources
+				
+				CourceBlockCell()
+					.padding(.horizontal, 18)
 				
 				CourceBlockCell()
 					.padding(.horizontal, 18)

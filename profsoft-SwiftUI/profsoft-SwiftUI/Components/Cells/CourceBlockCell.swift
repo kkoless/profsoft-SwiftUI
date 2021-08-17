@@ -19,16 +19,21 @@ struct CourceBlockCell: View {
 extension CourceBlockCell {
 	
 	var content: some View {
+		
 		VStack(spacing: 0) {
 			Group {
 				CourseCell(title: "Номер сертификата:", description: "№ 08-09270-7321897")
-					.padding(.bottom, 10)
+					
+					
 				CourseCell(title: "Направление подготовки:", description: "Design")
-					.padding(.bottom, 10)
+					
+					
 				CourseCell(title: "Форма обучения:", description: "очная")
-					.padding(.bottom, 10)
+					
+					
 				CourseCell(title: "Период обучения:", description: "01.07.2021-30.08.2021")
-					.padding(.bottom, 16)
+					.padding(.bottom, 3)
+					
 			}
 			
 			if isShowMore {
@@ -38,53 +43,59 @@ extension CourceBlockCell {
 			else {
 				Group {
 					CourseCell(title: "Изучение:", description: "Создание макетов и прототипов Web и Мобильных приложения для платформ iOS, Android в Figma. Изучение UXPin, практическое применение полученных знаний")
-						.padding(.bottom, 10)
+						
 					
 					CourseCell(title: "Преподаватель:", description: "Щелкунова Юлия Сергеевна")
-						.padding(.bottom, 10)
+						
 					
 					Image("certificate")
 						.resizable()
 						.scaledToFill()
-						.padding(.bottom, 10)
+						.padding(.bottom, 5)
 					
-					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, fontWeight: .regular, aligment: .leading, underline: true)
-						.padding(.bottom, 16)
+					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, aligment: .leading, underline: true)
+						.padding(.bottom, 10)
 					
 				}
 				
 				showLessButtom
-				
 			}
 			
-			
 		}
+		
+		
 	}
 	
 	var showMoreButtom: some View {
 		VStack(spacing: 0) {
 			Button(action: { isShowMore.toggle() }, label: {
 				Image("showMore")
+					.frame(width: 24, height: 24, alignment: .center)
+					.scaledToFill()
 			})
-			.padding(.bottom, 16)
+			.padding(.bottom, 5)
 			
 			Image("separator")
+				.resizable()
+				.scaledToFit()
 		}
-		.frame(maxWidth: .infinity)
-		.padding(.bottom, 20)
+		.padding(.bottom, 10)
 	}
 	
 	var showLessButtom: some View {
 		VStack(spacing: 0) {
 			Button(action: { isShowMore.toggle() }, label: {
 				Image("showLess")
+					.frame(width: 24, height: 24, alignment: .center)
+					.scaledToFill()
 			})
-			.padding(.bottom, 16)
+			.padding(.bottom, 10)
 			
 			Image("separator")
+				.resizable()
+				.scaledToFit()
 		}
-		.frame(maxWidth: .infinity)
-		.padding(.bottom, 20)
+		.padding(.bottom, 10)
 	}
 	
 }

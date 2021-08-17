@@ -20,16 +20,15 @@ struct CourseCell: View {
 extension CourseCell {
 	
 	var content: some View {
-		VStack {
-			BaseText(text: title, foregroundColor: .gray, fontSize: 15, fontWeight: .regular, aligment: .leading, underline: false)
+		VStack(spacing: 0) {
+			BaseText(text: title, foregroundColor: .gray, fontSize: 15, aligment: .leading, underline: false)
 				.padding(.top, 5)
+				.padding(.bottom, 5)
 			
-			Spacer()
-			
-			BaseText(text: description, foregroundColor: .black, fontSize: 15, fontWeight: .regular, aligment: .leading, underline: false)
+			BaseText(text: description, foregroundColor: .black, fontSize: 15, aligment: .leading, underline: false)
 				.padding(.bottom, 5)
 		}
-		.frame(height: 50)
+		.frame(maxHeight: 51)
 	}
 	
 }

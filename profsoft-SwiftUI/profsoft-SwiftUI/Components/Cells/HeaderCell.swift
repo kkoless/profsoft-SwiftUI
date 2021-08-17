@@ -44,12 +44,18 @@ extension HeaderCell {
 				.cornerRadius(12)
 				
 				VStack(alignment: .leading, spacing: 0) {
-					Text("КОЖИН АЛЕКСАНДР СЕРГЕЕВИЧ").bold()
+					Text("КОЖИН АЛЕКСАНДР СЕРГЕЕВИЧ")
+						.font(Font.custom("GolosText-DemiBold", size: 17.5))
+						.lineLimit(2)
 						.padding(.bottom, 7)
+						.frame(maxWidth: .infinity, alignment: .leading)
+					
 					Text("kologram@gmail.com")
+						.font(Font.custom("GolosText-Medium", size: 15))
 				}
 				.foregroundColor(.white)
-				.padding(.leading, 7)
+				.padding(.leading, 10)
+				.frame(maxWidth: .infinity, alignment: .leading)
 
 				Spacer()
 			}

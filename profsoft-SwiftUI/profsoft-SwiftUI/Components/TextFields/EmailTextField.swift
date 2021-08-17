@@ -34,16 +34,24 @@ struct EmailTextField: View {
 extension EmailTextField {
 	
 	func checkValid() -> Bool {
+		
+		for fontFamily in UIFont.familyNames {
+			for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
+				print("\(fontName)")
+			}
+		}
+		
 		if !emailPredicate.evaluate(with: email) && !email.isEmpty {
 			return false
 		}
 		else { return true }
+		
 	}
 	
 	var emailLabelError: some View {
 		HStack {
 			Text("Неверная форма ввода")
-				.font(.system(size: 11, weight: .regular))
+				.font(Font.custom("Golos", size: 11).weight(.regular))
 				.foregroundColor(.red)
 				.padding(.bottom, 7)
 				.padding(.horizontal, 26)
