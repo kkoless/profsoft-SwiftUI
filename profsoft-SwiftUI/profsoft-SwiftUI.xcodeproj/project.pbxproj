@@ -14,6 +14,9 @@
 		E500BFC026CAFCAA007B3BDF /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFBF26CAFCAA007B3BDF /* ProfileScreenViewModel.swift */; };
 		E500BFC326CAFD8F007B3BDF /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */; };
 		E500BFC526CB1096007B3BDF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC426CB1096007B3BDF /* ImagePicker.swift */; };
+		E500BFC726CBADC4007B3BDF /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC626CBADC4007B3BDF /* CourseCell.swift */; };
+		E500BFC926CBB204007B3BDF /* CourceBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */; };
+		E500BFCB26CBB343007B3BDF /* ShowMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */; };
 		E50EF18726C677ED00211D19 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18626C677ED00211D19 /* BaseButton.swift */; };
 		E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18926C6F49900211D19 /* CompanyLogo.swift */; };
 		E50EF18E26C8415100211D19 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF18D26C8415100211D19 /* LoginScreenView.swift */; };
@@ -41,6 +44,9 @@
 		E500BFBF26CAFCAA007B3BDF /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		E500BFC426CB1096007B3BDF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E500BFC626CBADC4007B3BDF /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourceBlockCell.swift; sourceTree = "<group>"; };
+		E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButton.swift; sourceTree = "<group>"; };
 		E50EF18626C677ED00211D19 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		E50EF18926C6F49900211D19 /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		E50EF18D26C8415100211D19 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */,
+				E500BFC626CBADC4007B3BDF /* CourseCell.swift */,
+				E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E50EF18626C677ED00211D19 /* BaseButton.swift */,
+				E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -418,10 +427,13 @@
 				E50EF19A26C84B6900211D19 /* PasswordTextField.swift in Sources */,
 				E50EF18A26C6F49900211D19 /* CompanyLogo.swift in Sources */,
 				E51B403F26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift in Sources */,
+				E500BFC926CBB204007B3BDF /* CourceBlockCell.swift in Sources */,
 				E51B406326C5290B006BFDDA /* View+Extensions.swift in Sources */,
 				E500BFC026CAFCAA007B3BDF /* ProfileScreenViewModel.swift in Sources */,
 				E500BFC326CAFD8F007B3BDF /* HeaderCell.swift in Sources */,
+				E500BFCB26CBB343007B3BDF /* ShowMoreButton.swift in Sources */,
 				E500BFBA26CADA0F007B3BDF /* DashboardScreenViewModel.swift in Sources */,
+				E500BFC726CBADC4007B3BDF /* CourseCell.swift in Sources */,
 				E51B405C26C52545006BFDDA /* StartScreenView.swift in Sources */,
 				E50EF19526C8475A00211D19 /* LoginForm.swift in Sources */,
 				E51B405826C5201A006BFDDA /* AppStep.swift in Sources */,

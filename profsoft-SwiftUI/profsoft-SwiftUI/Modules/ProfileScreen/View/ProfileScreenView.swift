@@ -51,12 +51,25 @@ private extension ProfileScreenView {
 	
 	var loadedState: some View {
 		
-		VStack{
-			headerCell
-			Spacer()
+		ScrollView {
+			VStack(spacing: 0){
+				headerCell
+				
+				BaseText(text: "МОИ КУРСЫ", foregroundColor: .black, fontSize: 15, fontWeight: .semibold, aligment: .leading, underline: nil)
+					.padding(.horizontal, 18)
+					.padding(.top, 20)
+					.padding(.bottom, 20)
+				
+				//ForEach cources
+				
+				CourceBlockCell()
+					.padding(.horizontal, 18)
+				
+				Spacer()
+			}
+			
 		}
 		.ignoresSafeArea(.all, edges: .top)
-		
 		
 	}
 	
@@ -64,10 +77,6 @@ private extension ProfileScreenView {
 	
 	var headerCell: some View {
 		HeaderCell()
-	}
-	
-	func userImageTap() {
-		
 	}
 	
 }

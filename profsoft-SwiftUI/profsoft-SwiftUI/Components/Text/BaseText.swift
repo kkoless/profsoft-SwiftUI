@@ -14,6 +14,7 @@ struct BaseText: View {
 	let fontSize: CGFloat
 	let fontWeight: Font.Weight
 	let aligment: Alignment
+	let underline: Bool?
 	
 	var body: some View {
 		content
@@ -25,6 +26,7 @@ extension BaseText {
 	
 	var content: some View {
 		Text(text)
+			.underline(underline ?? false, color: Color.black)
 			.foregroundColor(foregroundColor)
 			.font(.system(size: fontSize, weight: fontWeight))
 			.frame(maxWidth: .infinity, alignment: aligment)
@@ -34,6 +36,6 @@ extension BaseText {
 
 struct BaseText_Previews: PreviewProvider {
 	static var previews: some View {
-		BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading)
+		BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading, underline: nil)
 	}
 }

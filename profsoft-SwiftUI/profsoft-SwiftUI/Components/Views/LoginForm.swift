@@ -11,7 +11,6 @@ struct LoginForm: View {
 	
 	@State private var email: String = ""
 	@State private var password: String = ""
-	//@State private var isSecured: Bool = true
 	
 	var body: some View {
 		content

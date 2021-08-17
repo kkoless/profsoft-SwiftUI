@@ -97,7 +97,7 @@ private extension LoginScreenView {
 	var forgotPasswordButton: some View {
 		Button(
 			action: { showingAlert = true }) {
-			BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading)
+			BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, fontWeight: .semibold, aligment: .leading, underline: false)
 		}
 		.alert(isPresented: $showingAlert) {
 			Alert(title: Text("Забыли пароль?").bold(), message: Text("Напишите в поддержку academy@profsoft.pro"), dismissButton: .cancel(Text("Вернуться")))
