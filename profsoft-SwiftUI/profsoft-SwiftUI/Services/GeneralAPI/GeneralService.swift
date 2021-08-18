@@ -13,7 +13,7 @@ import Combine
 struct GeneralService {
 
 	//let provider = MasterProvider<GeneralAPI>()
-    private let testProvider = MasterProvider<GeneralAPI>(stubClosure: MasterProvider<GeneralAPI>.delayedStub(3), plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: [.formatRequestAscURL, .errorResponseBody, .verbose]))])
+    private let testProvider = MasterProvider<GeneralAPI>(stubClosure: MasterProvider<GeneralAPI>.delayedStub(1), plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: [.formatRequestAscURL, .errorResponseBody, .verbose]))])
 }
 
 extension GeneralService {

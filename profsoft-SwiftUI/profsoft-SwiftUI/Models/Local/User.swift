@@ -5,6 +5,8 @@
 //  Created by Кирилл Колесников on 17.08.2021.
 //
 
+import SwiftUI
+
 struct User {
 	let firstName: String
 	let lastName: String
@@ -17,7 +19,8 @@ struct User {
 	}
 }
 
-struct Cource {
+struct Cource: Identifiable {
+	let id = UUID()
 	let certificateNumber: String
 	let cource: String
 	let formEducation: String

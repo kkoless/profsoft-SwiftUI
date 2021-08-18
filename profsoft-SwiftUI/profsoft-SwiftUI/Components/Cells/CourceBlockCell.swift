@@ -10,6 +10,7 @@ import SwiftUI
 struct CourceBlockCell: View {
 	
 	@State var isShowMore: Bool = true
+	@State var cource: Cource
 	
     var body: some View {
        content
@@ -22,16 +23,13 @@ extension CourceBlockCell {
 		
 		VStack(spacing: 0) {
 			Group {
-				CourseCell(title: "Номер сертификата:", description: "№ 08-09270-7321897")
+				CourseCell(title: "Номер сертификата:", description: cource.certificateNumber)
 					
+				CourseCell(title: "Направление подготовки:", description: cource.cource)
 					
-				CourseCell(title: "Направление подготовки:", description: "Design")
+				CourseCell(title: "Форма обучения:", description: cource.formEducation)
 					
-					
-				CourseCell(title: "Форма обучения:", description: "очная")
-					
-					
-				CourseCell(title: "Период обучения:", description: "01.07.2021-30.08.2021")
+				CourseCell(title: "Период обучения:", description: cource.period)
 					.padding(.bottom, 3)
 					
 			}
@@ -42,12 +40,10 @@ extension CourceBlockCell {
 			
 			else {
 				Group {
-					CourseCell(title: "Изучение:", description: "Создание макетов и прототипов Web и Мобильных приложения для платформ iOS, Android в Figma. Изучение UXPin, практическое применение полученных знаний")
+					CourseCell(title: "Изучение:", description: cource.description)
 						
-					
-					CourseCell(title: "Преподаватель:", description: "Щелкунова Юлия Сергеевна")
+					CourseCell(title: "Преподаватель:", description: cource.teacher)
 						
-					
 					Image("certificate")
 						.resizable()
 						.scaledToFill()
@@ -102,6 +98,6 @@ extension CourceBlockCell {
 
 struct CourceBlockCell_Previews: PreviewProvider {
     static var previews: some View {
-        CourceBlockCell()
+		CourceBlockCell(cource: Cource.emptyObj())
     }
 }

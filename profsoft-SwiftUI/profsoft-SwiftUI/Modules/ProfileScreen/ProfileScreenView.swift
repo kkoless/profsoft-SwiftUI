@@ -70,11 +70,11 @@ private extension ProfileScreenView {
 					.padding(.top, 15)
 					.padding(.bottom, 15)
 				
-				CourceBlockCell()
-					.padding(.horizontal, 18)
 				
-				CourceBlockCell()
-					.padding(.horizontal, 18)
+				ForEach(viewModel.user.cources) { cource in
+					CourceBlockCell(cource: cource)
+						.padding(.horizontal, 18)
+				}
 				
 				Spacer()
 			}
@@ -83,7 +83,6 @@ private extension ProfileScreenView {
 		.ignoresSafeArea(.all, edges: .top)
 		
 	}
-	
 	
 	
 	var headerCell: some View {

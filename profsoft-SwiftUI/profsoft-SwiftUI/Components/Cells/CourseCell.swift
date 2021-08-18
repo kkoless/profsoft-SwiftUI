@@ -28,7 +28,6 @@ extension CourseCell {
 			BaseText(text: description, foregroundColor: .black, fontSize: 15, aligment: .leading, underline: false)
 				.padding(.bottom, 5)
 		}
-		.frame(maxHeight: 51)
 	}
 	
 }
