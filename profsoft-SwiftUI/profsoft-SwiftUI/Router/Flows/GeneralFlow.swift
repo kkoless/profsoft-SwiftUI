@@ -15,19 +15,26 @@ struct GeneralFlow {
 			case .start: navigationToStartScreen()
 			case .login: navigationToLoginScreen()
 			case .dashboard: navigationToDashboardScreen()
+            case .profile: navigationToProfileScreen()
 		}
 	}
-	
-	static func navigationToStartScreen() -> some View {
-		StartScreenView(viewModel: StartScreenViewModel())
-	}
 
-	static func navigationToLoginScreen() -> some View {
-		LoginScreenView(viewModel: LoginScreenViewModel()).navigationBarHidden(true)
-	}
-	
-	static func navigationToDashboardScreen() -> some View {
-		DashboardScreenView(viewModel: DashboardScreenViewModel()).navigationBarHidden(true)
-	}
+}
 
+private extension GeneralFlow {
+    static func navigationToStartScreen() -> some View {
+        StartScreenView(viewModel: StartScreenViewModel())
+    }
+
+    static func navigationToLoginScreen() -> some View {
+        LoginScreenView(viewModel: LoginScreenViewModel()).navigationBarHidden(true)
+    }
+
+    static func navigationToDashboardScreen() -> some View {
+        DashboardScreenView(viewModel: DashboardScreenViewModel()).navigationBarHidden(true)
+    }
+
+    static func navigationToProfileScreen() -> some View {
+        ProfileScreenView(viewModel: ProfileScreenViewModel()).navigationBarHidden(true)
+    }
 }

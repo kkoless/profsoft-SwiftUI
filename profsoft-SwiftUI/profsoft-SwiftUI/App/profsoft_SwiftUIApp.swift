@@ -12,6 +12,7 @@ import Combine
 struct profsoft_SwiftUIApp: App {
 	
 	@StateObject var viewModel = StartScreenViewModel()
+	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 	
 	var body: some Scene {
 		WindowGroup {

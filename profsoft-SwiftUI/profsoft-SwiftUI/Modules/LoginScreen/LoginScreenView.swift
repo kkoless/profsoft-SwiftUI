@@ -84,6 +84,7 @@ private extension LoginScreenView {
 					.padding(.bottom, 20)
 			}
 		}
+		.onTapGesture(perform: hideKeyboard)
 		
 	}
 	

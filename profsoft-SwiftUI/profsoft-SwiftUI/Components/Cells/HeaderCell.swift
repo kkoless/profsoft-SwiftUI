@@ -14,6 +14,8 @@ struct HeaderCell: View {
 	@State private var image = UIImage()
 	@State private var isFirstImage = true
 	
+	@State var user: User
+	
 	var body: some View {
 		content
 			.sheet(isPresented: $isShowPhotoLibrary) {
@@ -44,13 +46,13 @@ extension HeaderCell {
 				.cornerRadius(12)
 				
 				VStack(alignment: .leading, spacing: 0) {
-					Text("КОЖИН АЛЕКСАНДР СЕРГЕЕВИЧ")
+					Text("\(user.firstName) \(user.lastName) \(user.patronymic)")
 						.font(Font.custom("GolosText-DemiBold", size: 17.5))
 						.lineLimit(2)
 						.padding(.bottom, 7)
 						.frame(maxWidth: .infinity, alignment: .leading)
 					
-					Text("kologram@gmail.com")
+					Text(user.email)
 						.font(Font.custom("GolosText-Medium", size: 15))
 				}
 				.foregroundColor(.white)
@@ -74,6 +76,6 @@ extension HeaderCell {
 
 struct HeaderCell_Previews: PreviewProvider {
     static var previews: some View {
-		HeaderCell()
+		HeaderCell(user: User.emptyObj())
     }
 }

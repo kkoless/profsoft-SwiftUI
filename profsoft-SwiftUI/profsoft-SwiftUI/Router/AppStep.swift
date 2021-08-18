@@ -11,6 +11,7 @@ enum AppStep {
 	case start
 	case login
 	case dashboard
+    case profile
 	
 	//case none
 }

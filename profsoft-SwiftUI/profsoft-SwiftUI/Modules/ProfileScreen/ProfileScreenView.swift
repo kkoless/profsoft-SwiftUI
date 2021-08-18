@@ -13,6 +13,7 @@ struct ProfileScreenView: View {
 	@ObservedObject private var viewModel: ProfileScreenViewModel
 	
 	@State private var link: AppStep? = nil
+    @State private var viewDidAppear = false
 	
 	init(viewModel: ProfileScreenViewModel) {
 		self.viewModel = viewModel
@@ -21,6 +22,11 @@ struct ProfileScreenView: View {
 	var body: some View {
 		content
 			.navigate(using: $link, flow: .general)
+			.onAppear {
+                guard !viewDidAppear else { return }
+				viewModel.getUsers()
+                viewDidAppear.toggle()
+			}
 	}
 	
 }
@@ -33,17 +39,18 @@ private extension ProfileScreenView {
 				processingState
 			case .loaded:
 				loadedState
-			case .error(let errorState):
-				switch errorState {
-					case .global:
-						loadedState
-					case .parsing:
-						loadedState
-				}
+			case .error:
+				errorState
 		}
 	}
 	
 	var processingState: some View {
+		VStack {
+			Spacer()
+		}
+	}
+	
+	var errorState: some View {
 		VStack {
 			Spacer()
 		}
@@ -63,8 +70,6 @@ private extension ProfileScreenView {
 					.padding(.top, 15)
 					.padding(.bottom, 15)
 				
-				//ForEach cources
-				
 				CourceBlockCell()
 					.padding(.horizontal, 18)
 				
@@ -82,8 +87,9 @@ private extension ProfileScreenView {
 	
 	
 	var headerCell: some View {
-		HeaderCell()
+		HeaderCell(user: viewModel.user)
 	}
+	
 	
 }
 

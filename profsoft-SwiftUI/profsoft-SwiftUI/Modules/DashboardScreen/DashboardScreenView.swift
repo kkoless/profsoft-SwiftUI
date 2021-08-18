@@ -63,11 +63,13 @@ private extension DashboardScreenView {
 					Image("search")
 				}
 			
-			ProfileScreenView(viewModel: ProfileScreenViewModel())
-				.tabItem {
-					Image("profile")
-				}
-				.navigationBarHidden(true)
+            NavigationView {
+                GeneralFlow.build(.profile)
+            }
+            .tabItem {
+                Image("profile")
+            }
+            .navigationBarHidden(true)
 			
 		}
 		
