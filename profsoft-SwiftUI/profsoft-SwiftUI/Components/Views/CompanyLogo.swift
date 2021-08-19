@@ -13,7 +13,7 @@ struct CompanyLogo: View {
 		
 		HStack(alignment: .center){
 			Image("leftPart")
-				.offset(x: 10, y: 0)
+				.offset(x: 10 , y: 0)
 			
 			Toggle(
 				isOn: .constant(true),
@@ -26,6 +26,7 @@ struct CompanyLogo: View {
 		}
 
     }
+	
 }
 
 struct CompanyLogo_Previews: PreviewProvider {

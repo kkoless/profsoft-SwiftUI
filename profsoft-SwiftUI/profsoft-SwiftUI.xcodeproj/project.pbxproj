@@ -44,6 +44,8 @@
 		E50EF19526C8475A00211D19 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF19426C8475A00211D19 /* LoginForm.swift */; };
 		E50EF19826C847DC00211D19 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF19726C847DC00211D19 /* BaseTextField.swift */; };
 		E50EF19A26C84B6900211D19 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50EF19926C84B6900211D19 /* PasswordTextField.swift */; };
+		E5197E0926CE717200B3A4BD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5197E0826CE717200B3A4BD /* SplashScreenView.swift */; };
+		E5197E0B26CE722D00B3A4BD /* SplashLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5197E0A26CE722D00B3A4BD /* SplashLogo.swift */; };
 		E51B403F26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B403E26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift */; };
 		E51B404326C51E2E006BFDDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51B404226C51E2E006BFDDA /* Assets.xcassets */; };
 		E51B404626C51E2E006BFDDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51B404526C51E2E006BFDDA /* Preview Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		E50EF19426C8475A00211D19 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		E50EF19726C847DC00211D19 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		E50EF19926C84B6900211D19 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		E5197E0826CE717200B3A4BD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		E5197E0A26CE722D00B3A4BD /* SplashLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogo.swift; sourceTree = "<group>"; };
 		E51B403B26C51E2E006BFDDA /* profsoft-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "profsoft-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51B403E26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profsoft_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E51B404226C51E2E006BFDDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				E50EF18926C6F49900211D19 /* CompanyLogo.swift */,
 				E50EF19426C8475A00211D19 /* LoginForm.swift */,
+				E5197E0A26CE722D00B3A4BD /* SplashLogo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,8 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				E51B403E26C51E2E006BFDDA /* profsoft_SwiftUIApp.swift */,
-				E51B404726C51E2E006BFDDA /* Info.plist */,
 				E50C422A26CD0D3800BB387E /* AppDelegate.swift */,
+				E51B404726C51E2E006BFDDA /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 		E51B405326C51F39006BFDDA /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				E5197E0826CE717200B3A4BD /* SplashScreenView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -500,9 +506,11 @@
 				E500BFAE26CA6EFE007B3BDF /* EmailTextField.swift in Sources */,
 				E50EF18E26C8415100211D19 /* LoginScreenView.swift in Sources */,
 				E50C422F26CD0F0600BB387E /* Bundle+Extensions.swift in Sources */,
+				E5197E0B26CE722D00B3A4BD /* SplashLogo.swift in Sources */,
 				E50EF19326C842BF00211D19 /* BaseText.swift in Sources */,
 				E50C421926CC32E200BB387E /* User.swift in Sources */,
 				E50C421F26CC352700BB387E /* UserMapper.swift in Sources */,
+				E5197E0926CE717200B3A4BD /* SplashScreenView.swift in Sources */,
 				E50EF19826C847DC00211D19 /* BaseTextField.swift in Sources */,
 				E50C422226CC4A1100BB387E /* ServerResponse.swift in Sources */,
 				E500BFB526CAD8FA007B3BDF /* DashboardScreenView.swift in Sources */,

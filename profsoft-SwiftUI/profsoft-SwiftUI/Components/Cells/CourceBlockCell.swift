@@ -43,6 +43,7 @@ extension CourceBlockCell {
 					CourseCell(title: "Изучение:", description: cource.description)
 						
 					CourseCell(title: "Преподаватель:", description: cource.teacher)
+						.padding(.bottom, 5)
 						
 					Image("certificate")
 						.resizable()

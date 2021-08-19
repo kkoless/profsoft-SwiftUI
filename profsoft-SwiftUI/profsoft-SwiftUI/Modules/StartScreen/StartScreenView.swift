@@ -12,6 +12,8 @@ struct StartScreenView: View {
 	@ObservedObject private var viewModel: StartScreenViewModel
 	
 	@State private var link: AppStep? = nil
+	@State var animate: Bool = false
+	@State var endSplash: Bool = false
 	
 	init(viewModel: StartScreenViewModel) {
 		self.viewModel = viewModel
@@ -49,18 +51,38 @@ private extension StartScreenView {
 	}
 
 	var loadedState: some View {
-		VStack(spacing: 0) {
-			Spacer()
-			companyLogo
-				.padding(.horizontal, 78)
-				.padding(.bottom, 223)
-			enterButton
-				.padding(.horizontal, 16)
-				.padding(.bottom, 15)
-			skipButton
-				.padding(.horizontal, 16)
-				.padding(.bottom, 20)
+		
+		ZStack {
+			
+			VStack(spacing: 0) {
+				Group {
+					Spacer()
+					Spacer()
+					Spacer()
+				}
+				companyLogo
+					.padding(.horizontal, 78)
+					.padding(.bottom, 223)
+				
+				Spacer()
+				
+				enterButton
+					.padding(.horizontal, 16)
+					.padding(.bottom, 15)
+				skipButton
+					.padding(.horizontal, 16)
+					.padding(.bottom, 20)
+			}
+			.opacity(endSplash ? 1 : 0)
+			
 		}
+		.onAppear {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				endSplash.toggle()
+			}
+		}
+
+		
 	}
 	
 	var companyLogo: some View {

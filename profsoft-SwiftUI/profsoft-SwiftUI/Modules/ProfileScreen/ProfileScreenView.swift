@@ -70,10 +70,11 @@ private extension ProfileScreenView {
 					.padding(.top, 15)
 					.padding(.bottom, 15)
 				
-				
-				ForEach(viewModel.user.cources) { cource in
-					CourceBlockCell(cource: cource)
-						.padding(.horizontal, 18)
+				Group {
+					ForEach(viewModel.user.cources) { cource in
+						CourceBlockCell(cource: cource)
+							.padding(.horizontal, 18)
+					}
 				}
 				
 				Spacer()

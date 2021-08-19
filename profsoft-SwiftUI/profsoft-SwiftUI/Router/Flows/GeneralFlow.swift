@@ -23,7 +23,7 @@ struct GeneralFlow {
 
 private extension GeneralFlow {
     static func navigationToStartScreen() -> some View {
-        StartScreenView(viewModel: StartScreenViewModel())
+		StartScreenView(viewModel: StartScreenViewModel())
     }
 
     static func navigationToLoginScreen() -> some View {
