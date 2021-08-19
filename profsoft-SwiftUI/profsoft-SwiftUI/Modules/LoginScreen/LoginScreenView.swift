@@ -73,7 +73,6 @@ private extension LoginScreenView {
 				Group {
 					Spacer()
 					Spacer()
-					Spacer()
 				}
 				
 				companyLogo
