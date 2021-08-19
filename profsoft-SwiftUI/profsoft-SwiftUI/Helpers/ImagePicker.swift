@@ -5,49 +5,56 @@
 //  Created by Кирилл Колесников on 17.08.2021.
 //
 
-import UIKit
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
-	
-	var sourceType: UIImagePickerController.SourceType = .photoLibrary
-	
-	@Binding var selectedImage: UIImage
+public struct ImagePickerView: UIViewControllerRepresentable {
+
+	private let sourceType: UIImagePickerController.SourceType
+	private let onImagePicked: (UIImage) -> Void
 	@Environment(\.presentationMode) private var presentationMode
 
-	func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-		
-		let imagePicker = UIImagePickerController()
-		imagePicker.allowsEditing = false
-		imagePicker.sourceType = sourceType
-		imagePicker.delegate = context.coordinator
-		
-		return imagePicker
+	public init(sourceType: UIImagePickerController.SourceType, onImagePicked: @escaping (UIImage) -> Void) {
+		self.sourceType = sourceType
+		self.onImagePicked = onImagePicked
 	}
-	
-	func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-		
+
+	public func makeUIViewController(context: Context) -> UIImagePickerController {
+		let picker = UIImagePickerController()
+		picker.sourceType = self.sourceType
+		picker.delegate = context.coordinator
+		return picker
 	}
-	
-	func makeCoordinator() -> Coordinator {
-		Coordinator(self)
+
+	public func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+
+	public func makeCoordinator() -> Coordinator {
+		Coordinator(
+			onDismiss: { self.presentationMode.wrappedValue.dismiss() },
+			onImagePicked: self.onImagePicked
+		)
 	}
-	
-	final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-		
-		var parent: ImagePicker
-		
-		init(_ parent: ImagePicker) {
-			self.parent = parent
+
+	final public class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+		private let onDismiss: () -> Void
+		private let onImagePicked: (UIImage) -> Void
+
+		init(onDismiss: @escaping () -> Void, onImagePicked: @escaping (UIImage) -> Void) {
+			self.onDismiss = onDismiss
+			self.onImagePicked = onImagePicked
 		}
-		
-		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-			
-			if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-				parent.selectedImage = image
+
+		public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+			if let image = info[.originalImage] as? UIImage {
+				self.onImagePicked(image)
 			}
-			
-			parent.presentationMode.wrappedValue.dismiss()
+			self.onDismiss()
 		}
+
+		public func imagePickerControllerDidCancel(_: UIImagePickerController) {
+			self.onDismiss()
+		}
+
 	}
+
 }

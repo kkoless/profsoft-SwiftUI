@@ -10,7 +10,7 @@ import SwiftUI
 struct HeaderCell: View {
 	
 	@State private var userImageTap: Bool = false
-	@State private var isShowPhotoLibrary = false
+	@State var showImagePicker: Bool = false
 	@State private var image = UIImage()
 	@State private var isFirstImage = true
 	
@@ -18,8 +18,10 @@ struct HeaderCell: View {
 	
 	var body: some View {
 		content
-			.sheet(isPresented: $isShowPhotoLibrary) {
-				ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+			.sheet(isPresented: $showImagePicker) {
+				ImagePickerView(sourceType: .photoLibrary) { image in
+					self.image = image
+				}
 			}
 	}
 	
@@ -34,7 +36,7 @@ extension HeaderCell {
 			HStack(alignment: .bottom, spacing: 0) {
 				
 				Button(action: {
-					isShowPhotoLibrary.toggle()
+					showImagePicker.toggle()
 					isFirstImage = false
 				}) {
 					Image(uiImage: isFirstImage ? UIImage(named: "userImage")! : image)
