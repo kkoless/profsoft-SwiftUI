@@ -13,8 +13,13 @@ struct LoginScreenView: View {
 	@ObservedObject private var viewModel: LoginScreenViewModel
 	
 	@State private var link: AppStep? = nil
+	
 	@State private var showingAlert = false
 	
+	@State private var email: String = ""
+	@State private var password: String = ""
+
+
 	init(viewModel: LoginScreenViewModel) {
 		self.viewModel = viewModel
 	}
@@ -93,8 +98,9 @@ private extension LoginScreenView {
 	}
 
 	var loginForm: some View {
-		LoginForm()
+		LoginForm(email: $email, password: $password)
 	}
+
 	
 	var forgotPasswordButton: some View {
 		Button(
@@ -108,7 +114,18 @@ private extension LoginScreenView {
 	
 	var enterButton: some View {
 		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход") {
-			link = .dashboard
+			link = isLogin() ? .dashboard : .none
+		}
+	}
+	
+	func isLogin() -> Bool {
+		let userPassword = Consts.UserCredentials.password
+		let userEmail = Consts.UserCredentials.email
+		
+		if email == userEmail && password == userPassword {
+			return true
+		} else {
+			return false
 		}
 	}
 

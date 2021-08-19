@@ -41,6 +41,7 @@ extension BaseTextField {
 			.padding(.horizontal)
 			.frame(height: 50)
 			.font(Font.custom("GolosText-DemiBold", size: 16))
+			.autocapitalization(.none)
 			.frame(maxWidth: .infinity)
 			.foregroundColor(foregroundColor)
 			.background(Color.white)

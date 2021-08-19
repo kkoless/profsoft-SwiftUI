@@ -9,27 +9,26 @@ import SwiftUI
 
 struct LoginForm: View {
 	
-	@State private var email: String = ""
-	@State private var password: String = ""
+	@Binding var email: String
+	@Binding var password: String
 	
 	var body: some View {
 		content
 	}
+	
 }
 
 extension LoginForm {
 	
 	var content: some View {
 		VStack(spacing: 0) {
-			
 			emailTextField
 				.padding(.bottom, 15)
+			
 			passwordTextField
-		
 		}
 	}
 	
-
 	var emailTextField: some View {
 		EmailTextField(email: $email)
 	}
@@ -38,19 +37,10 @@ extension LoginForm {
 		PasswordTextField(password: $password)
 	}
 	
-	
-	
 }
-
-extension LoginForm {
-	
-	
-	
-}
-
 
 struct LoginForm_Previews: PreviewProvider {
     static var previews: some View {
-		LoginForm()
+		LoginForm(email: .constant("pro@gmail.com"), password: .constant("qwerty1"))
     }
 }

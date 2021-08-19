@@ -52,13 +52,13 @@ private extension DashboardScreenView {
 	var loadedState: some View {
 		TabView {
 			
-			//LoginScreenView(viewModel: LoginScreenViewModel())
-			Text("home")
+
+			Text("home").navigationBarHidden(true)
 				.tabItem {
 					Image("home")
 				}
 			
-			Text("search")
+			Text("search").navigationBarHidden(true)
 				.tabItem {
 					Image("search")
 				}
