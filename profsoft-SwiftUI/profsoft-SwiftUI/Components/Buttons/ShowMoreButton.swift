@@ -28,7 +28,6 @@ extension ShowMoreButton {
 		.frame(maxWidth: .infinity)
 	}
 	
-	
 }
 
 struct ShowMoreButton_Previews: PreviewProvider {

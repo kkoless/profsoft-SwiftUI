@@ -22,6 +22,7 @@ extension LoginForm {
 	
 	var content: some View {
 		VStack(spacing: 0) {
+			
 			emailTextField
 				.padding(.bottom, 15)
 			

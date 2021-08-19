@@ -18,7 +18,9 @@ struct profsoft_SwiftUIApp: App {
 	
 	var body: some Scene {
 		WindowGroup {
+			
 			ZStack{
+				
 				NavigationView {
 					StartScreenView(viewModel: viewModel)
 				}
@@ -27,17 +29,16 @@ struct profsoft_SwiftUIApp: App {
 					.onAppear(perform: animateSplash)
 					.opacity(endSplash ? 0 : 1)
 					.animation(.easeInOut(duration: 0.5))
-			}
-		}
+				
+			} // ZStack
+			
+		} // WindowGroup
 	}
 	
-	
 	func animateSplash() {
-		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 			endSplash.toggle()
 		}
-		
 	}
 	
 }

@@ -13,32 +13,27 @@ struct EmailTextField: View {
 	
 	@Binding var email: String
 	
-	
 	var body: some View {
 		
 		VStack {
 			
 			if !checkValid() {
 				emailLabelError
-			}
-			else {
+			} else {
 				emptyBlock
 			}
 			
 			BaseTextField(placeholder: "Email", text: $email, borderColor: checkValid() ? .constant(.black): .constant(.red), foregroundColor: checkValid() ? .constant(.black): .constant(.red))
+			
 		}
-		
 	}
+	
 }
 
 extension EmailTextField {
 	
 	func checkValid() -> Bool {
-		if !emailPredicate.evaluate(with: email) && !email.isEmpty {
-			return false
-		}
-		else { return true }
-		
+		return !emailPredicate.evaluate(with: email) && !email.isEmpty ? false : true
 	}
 	
 	var emailLabelError: some View {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BaseButton: View {
 	
-	//@State private var link: AppStep? = nil
 	let foregroundColor: Color
 	let backgroundColor: Color
 	let borderColor: Color
@@ -17,12 +16,12 @@ struct BaseButton: View {
 	
 	let onTap: () -> Void
 	
-	
     var body: some View {
 		Button(action: onTap) {
 			content
 		}
     }
+	
 }
 
 

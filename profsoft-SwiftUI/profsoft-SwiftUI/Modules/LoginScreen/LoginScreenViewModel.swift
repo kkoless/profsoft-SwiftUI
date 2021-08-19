@@ -12,7 +12,7 @@ final class LoginScreenViewModel: ObservableObject {
 
 	@Published private(set) var screenState: ScreenState = .loaded
 
-	private var productMethodState: MethodState = .success
+	private var authMethodState: MethodState = .success
 	
 	private var cancellable = Set<AnyCancellable>() // DisposeBag
 }

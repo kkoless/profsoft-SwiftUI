@@ -12,6 +12,7 @@ struct StartScreenView: View {
 	@ObservedObject private var viewModel: StartScreenViewModel
 	
 	@State private var link: AppStep? = nil
+	
 	@State var animate: Bool = false
 	@State var endSplash: Bool = false
 	
@@ -34,13 +35,19 @@ private extension StartScreenView {
 				processingState
 			case .loaded:
 				loadedState
-			case .error(let errorState):
-				switch errorState {
+			case .error(let error):
+				switch error {
 					case .global:
-						loadedState
+						errorState
 					case .parsing:
-						loadedState
+						errorState
 				}
+		}
+	}
+	
+	var errorState: some View {
+		VStack {
+			Spacer()
 		}
 	}
 
@@ -51,9 +58,7 @@ private extension StartScreenView {
 	}
 
 	var loadedState: some View {
-		
 		ZStack {
-			
 			VStack(spacing: 0) {
 				Group {
 					Spacer()
@@ -72,16 +77,16 @@ private extension StartScreenView {
 				skipButton
 					.padding(.horizontal, 16)
 					.padding(.bottom, 20)
-			}
+				
+			} // VStack
 			.opacity(endSplash ? 1 : 0)
 			
-		}
+		} // ZStack
 		.onAppear {
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 				endSplash.toggle()
 			}
 		}
-
 		
 	}
 	

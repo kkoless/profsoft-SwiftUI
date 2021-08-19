@@ -15,6 +15,7 @@ struct CourseCell: View {
     var body: some View {
         content
     }
+	
 }
 
 extension CourseCell {

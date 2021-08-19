@@ -18,6 +18,7 @@ struct BaseText: View {
 	var body: some View {
 		content
 	}
+	
 }
 
 

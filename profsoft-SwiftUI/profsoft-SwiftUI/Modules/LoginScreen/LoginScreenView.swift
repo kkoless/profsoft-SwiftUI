@@ -39,16 +39,22 @@ private extension LoginScreenView {
 			processingState
 		case .loaded:
 			loadedState
-		case .error(let errorState):
-			switch errorState {
+		case .error(let error):
+			switch error {
 			case .global:
-				loadedState
+				errorState
 			case .parsing:
-				loadedState
+				errorState
 			}
 		}
 	}
 
+	var errorState: some View {
+		VStack {
+			Spacer()
+		}
+	}
+	
 	var processingState: some View {
 		VStack {
 			Spacer()
@@ -56,27 +62,34 @@ private extension LoginScreenView {
 	}
 
 	var loadedState: some View {
-		VStack{
+		VStack {
 			
-			Spacer()
-			Spacer()
+			Group {
+				Spacer()
+				Spacer()
+			}
 			
 			VStack {
-				Spacer()
-				Spacer()
-				Spacer()
+				Group {
+					Spacer()
+					Spacer()
+					Spacer()
+				}
 				
 				companyLogo
 					.padding(.horizontal, 78)
 				
-				Spacer()
-				Spacer()
+				Group {
+					Spacer()
+					Spacer()
+				}
 				
 				loginForm
 					.padding(.horizontal, 16)
 				
 				Spacer()
-			}
+				
+			} // VStack 2
 			
 			VStack(spacing: 0) {
 				
@@ -87,8 +100,10 @@ private extension LoginScreenView {
 				enterButton
 					.padding(.horizontal, 16)
 					.padding(.bottom, 20)
-			}
-		}
+				
+			} // VStack 3
+			
+		} //VStack 1
 		.onTapGesture(perform: hideKeyboard)
 		
 	}
@@ -122,11 +137,7 @@ private extension LoginScreenView {
 		let userPassword = Consts.UserCredentials.password
 		let userEmail = Consts.UserCredentials.email
 		
-		if email == userEmail && password == userPassword {
-			return true
-		} else {
-			return false
-		}
+		return email == userEmail && password == userPassword ? true : false
 	}
 
 }

@@ -22,6 +22,7 @@ struct HeaderCell: View {
 				ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
 			}
 	}
+	
 }
 
 extension HeaderCell {
@@ -29,12 +30,12 @@ extension HeaderCell {
 	var content: some View {
 		
 		VStack {
-		
+			
 			HStack(alignment: .bottom, spacing: 0) {
 				
 				Button(action: {
-						isShowPhotoLibrary.toggle()
-						isFirstImage = false
+					isShowPhotoLibrary.toggle()
+					isFirstImage = false
 				}) {
 					Image(uiImage: isFirstImage ? UIImage(named: "userImage")! : image)
 						.resizable()
@@ -54,18 +55,20 @@ extension HeaderCell {
 					
 					Text(user.email)
 						.font(Font.custom("GolosText-Medium", size: 15))
-				}
+					
+				} // VStack 2
 				.foregroundColor(.white)
 				.padding(.leading, 10)
 				.frame(maxWidth: .infinity, alignment: .leading)
-
+				
 				Spacer()
-			}
+				
+			} // HStack
 			.frame(maxWidth: .infinity)
 			.padding(.bottom, 23)
 			.padding(.leading,16)
 			
-		}
+		} // VStack 1
 		.frame(height: 280, alignment: .bottom)
 		.background(Color(#colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1098039216, alpha: 1)))
 		

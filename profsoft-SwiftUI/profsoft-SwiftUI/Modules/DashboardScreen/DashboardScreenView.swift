@@ -33,13 +33,19 @@ private extension DashboardScreenView {
 				processingState
 			case .loaded:
 				loadedState
-			case .error(let errorState):
-				switch errorState {
+			case .error(let error):
+				switch error {
 					case .global:
-						loadedState
+						errorState
 					case .parsing:
-						loadedState
+						errorState
 				}
+		}
+	}
+	
+	var errorState: some View {
+		VStack {
+			Spacer()
 		}
 	}
 	
@@ -52,7 +58,6 @@ private extension DashboardScreenView {
 	var loadedState: some View {
 		TabView {
 			
-
 			Text("home").navigationBarHidden(true)
 				.tabItem {
 					Image("home")
@@ -63,19 +68,17 @@ private extension DashboardScreenView {
 					Image("search")
 				}
 			
-            NavigationView {
-                GeneralFlow.build(.profile)
-            }
-            .tabItem {
-                Image("profile")
-            }
-            .navigationBarHidden(true)
+			NavigationView {
+				GeneralFlow.build(.profile)
+			}
+			.tabItem {
+				Image("profile")
+			}
+			.navigationBarHidden(true)
 			
-		}
+		} // TabView
 		
 	}
-	
-	
 	
 }
 

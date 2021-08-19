@@ -11,15 +11,13 @@ final class UserModelMapper: BaseModelMapper<ServerUser, User> {
 	
 	override func toLocal(serverEntity: ServerUser) -> User {
 		
-		let model = User(
+		User(
 			firstName: serverEntity.firstName ?? "",
 			lastName: serverEntity.lastName ?? "",
 			patronymic: serverEntity.patronymic ?? "",
 			email: serverEntity.email ?? "",
 			cources: CourceMapper().toLocal(list: serverEntity.cources ?? [])
 		)
-
-        return model
 		
 	}
 }

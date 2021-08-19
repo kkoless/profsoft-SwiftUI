@@ -10,8 +10,7 @@ import SwiftUI
 struct CompanyLogo: View {
 	
     var body: some View {
-		
-		HStack(alignment: .center){
+		HStack(alignment: .center) {
 			Image("leftPart")
 				.offset(x: 10 , y: 0)
 			
@@ -23,8 +22,8 @@ struct CompanyLogo: View {
 			
 			
 			Image("rightPart")
-		}
-
+			
+		} // HStack
     }
 	
 }

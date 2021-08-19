@@ -10,9 +10,9 @@ import SwiftUI
 struct BaseTextField: View {
 	
 	private let placeholder: String
+	
 	@Binding private var borderColor: Color
 	@Binding private var foregroundColor: Color
-	
 	@Binding var text: String
 	
 	init(placeholder: String,
@@ -30,6 +30,7 @@ struct BaseTextField: View {
 	var body: some View {
 		content
 	}
+	
 }
 
 

@@ -12,7 +12,8 @@ final class DashboardScreenViewModel: ObservableObject {
 
 	@Published private(set) var screenState: ScreenState = .loaded
 
-	private var productMethodState: MethodState = .success
+	private var dashboardMethodState: MethodState = .success
+	
 	private var cancellable = Set<AnyCancellable>()
 }
 

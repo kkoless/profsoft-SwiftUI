@@ -9,13 +9,14 @@ import Foundation
 import Combine
 
 final class ProfileScreenViewModel: ObservableObject {
-
-	@Injected private var service: UserReadable
+	
 	@Published private(set) var screenState: ScreenState = .processing
 
 	private(set) var user = User.emptyObj()
 	
-	private var usersMethodState: MethodState = .success
+	@Injected private var service: UserReadable
+	private var userMethodState: MethodState = .success
+	
 	private var cancellable = Set<AnyCancellable>()
 }
 
@@ -23,7 +24,7 @@ extension ProfileScreenViewModel {
 
 	func getUsers() {
 
-		usersMethodState = .success
+		userMethodState = .success
 
 		DispatchQueue.main.async {
 			self.screenState = .processing
@@ -31,13 +32,13 @@ extension ProfileScreenViewModel {
 
 		service.getUsers()
 			.catch { [weak self] error -> AnyPublisher<User, Never> in
-				self?.usersMethodState = .error
+				self?.userMethodState = .error
 				return Just(User.emptyObj()).eraseToAnyPublisher()
 			}
 			.sink { [weak self] in
 				guard let self = self else { return }
 
-				if self.usersMethodState != .error {
+				if self.userMethodState != .error {
 					self.user = $0
 
 					DispatchQueue.main.async {
@@ -51,8 +52,8 @@ extension ProfileScreenViewModel {
 				}
 			}
 			.store(in: &cancellable)
-
 	}
+	
 }
 
 

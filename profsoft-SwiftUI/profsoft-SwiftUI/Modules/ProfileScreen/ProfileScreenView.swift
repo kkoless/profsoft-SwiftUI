@@ -59,6 +59,7 @@ private extension ProfileScreenView {
 	var loadedState: some View {
 		
 		ScrollView {
+			
 			VStack(spacing: 0){
 				headerCell
 				
@@ -75,21 +76,20 @@ private extension ProfileScreenView {
 						CourceBlockCell(cource: cource)
 							.padding(.horizontal, 18)
 					}
-				}
+				} // Group
 				
 				Spacer()
-			}
+				
+			} // VStack
 			
-		}
+		} // ScrollView
 		.ignoresSafeArea(.all, edges: .top)
 		
 	}
 	
-	
 	var headerCell: some View {
 		HeaderCell(user: viewModel.user)
 	}
-	
 	
 }
 

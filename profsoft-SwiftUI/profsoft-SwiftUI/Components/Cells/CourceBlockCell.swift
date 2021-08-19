@@ -10,11 +10,13 @@ import SwiftUI
 struct CourceBlockCell: View {
 	
 	@State var isShowMore: Bool = true
+	
 	@State var cource: Cource
 	
     var body: some View {
        content
     }
+	
 }
 
 extension CourceBlockCell {
@@ -22,7 +24,9 @@ extension CourceBlockCell {
 	var content: some View {
 		
 		VStack(spacing: 0) {
+			
 			Group {
+				
 				CourseCell(title: "Номер сертификата:", description: cource.certificateNumber)
 					
 				CourseCell(title: "Направление подготовки:", description: cource.cource)
@@ -32,13 +36,11 @@ extension CourceBlockCell {
 				CourseCell(title: "Период обучения:", description: cource.period)
 					.padding(.bottom, 3)
 					
-			}
+			} // Group 1
 			
 			if isShowMore {
 				showMoreButtom
-			}
-			
-			else {
+			} else {
 				Group {
 					CourseCell(title: "Изучение:", description: cource.description)
 						
@@ -53,13 +55,12 @@ extension CourceBlockCell {
 					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, aligment: .leading, underline: true)
 						.padding(.bottom, 10)
 					
-				}
+				} // Group 2
 				
 				showLessButtom
 			}
 			
-		}
-		
+		} // VStack
 		
 	}
 	

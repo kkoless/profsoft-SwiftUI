@@ -56,7 +56,7 @@ struct PasswordTextField: View {
 				emptyBlock
 			}
 			
-		}
+		} // VStack
 		
 	}
 }
@@ -64,10 +64,7 @@ struct PasswordTextField: View {
 extension PasswordTextField {
 	
 	func checkValid() -> Bool {
-		if !passwordPredicate.evaluate(with: password) && !password.isEmpty {
-			return false
-		}
-		else { return true }
+		return !passwordPredicate.evaluate(with: password) && !password.isEmpty ? false : true
 	}
 	
 	var passwordLabelError: some View {
