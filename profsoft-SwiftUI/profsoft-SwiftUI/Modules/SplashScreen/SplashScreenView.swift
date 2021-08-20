@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SplashScreenView: View {
 	
-	@State var xOffsetLeft: CGFloat = 60
-	@State var xOffsetRight: CGFloat = 0
+	@State private var xOffsetLeft: CGFloat = 60
+	@State private var xOffsetRight: CGFloat = 0
 	
     var body: some View {
 		VStack{

@@ -119,7 +119,7 @@ private extension LoginScreenView {
 	var forgotPasswordButton: some View {
 		Button(
 			action: { showingAlert = true }) {
-			BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, aligment: .leading, underline: false)
+			BaseText(text: "Забыли пароль?", foregroundColor: .gray, fontSize: 16, alignment: .leading)
 		}
 		.alert(isPresented: $showingAlert) {
 			Alert(title: Text("Забыли пароль?").bold(), message: Text("Напишите в поддержку academy@profsoft.pro"), dismissButton: .cancel(Text("Вернуться")))
@@ -141,14 +141,20 @@ private extension LoginScreenView {
 		let userPassword = Consts.UserCredentials.password
 		let userEmail = Consts.UserCredentials.email
 		
-		return email == userEmail && password == userPassword ? true : false
+		let emailCheck = email == userEmail
+		let passwordCheck = password == userPassword
+		
+		return emailCheck && passwordCheck ? true : false
 	}
 	
 	func changeColorButton() -> Bool {
 		let emailPredicate = Consts.DataValidate.emailPredicate
 		let passwordPredicate = Consts.DataValidate.passwordPredicate
 		
-		return (!emailPredicate.evaluate(with: email) || email.isEmpty) || (!passwordPredicate.evaluate(with: password) || password.isEmpty) ? false : true
+		let emailCheck = !emailPredicate.evaluate(with: email) || email.isEmpty
+		let passwordCheck = !passwordPredicate.evaluate(with: password) || password.isEmpty
+		
+		return emailCheck || passwordCheck ? false : true
 	}
 
 }

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CourceBlockCell: View {
 	
-	@State var isShowMore: Bool = true
+	@State private var isShowMore: Bool = true
 	
-	@State var cource: Cource
+	@State private(set) var cource: Cource
 	
     var body: some View {
        content
@@ -27,13 +27,13 @@ extension CourceBlockCell {
 			
 			Group {
 				
-				CourseCell(title: "Номер сертификата:", description: cource.certificateNumber)
+				SectionCourseCell(title: "Номер сертификата:", description: cource.certificateNumber)
 					
-				CourseCell(title: "Направление подготовки:", description: cource.cource)
+				SectionCourseCell(title: "Направление подготовки:", description: cource.cource)
 					
-				CourseCell(title: "Форма обучения:", description: cource.formEducation)
+				SectionCourseCell(title: "Форма обучения:", description: cource.formEducation)
 					
-				CourseCell(title: "Период обучения:", description: cource.period)
+				SectionCourseCell(title: "Период обучения:", description: cource.period)
 					.padding(.bottom, 3)
 					
 			} // Group 1
@@ -42,9 +42,9 @@ extension CourceBlockCell {
 				showMoreButtom
 			} else {
 				Group {
-					CourseCell(title: "Изучение:", description: cource.description)
+					SectionCourseCell(title: "Изучение:", description: cource.description)
 						
-					CourseCell(title: "Преподаватель:", description: cource.teacher)
+					SectionCourseCell(title: "Преподаватель:", description: cource.teacher)
 						.padding(.bottom, 5)
 						
 					Image("certificate")
@@ -52,7 +52,7 @@ extension CourceBlockCell {
 						.scaledToFill()
 						.padding(.bottom, 10)
 					
-					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, aligment: .leading, underline: true)
+					BaseText(text: "ПОДЕЛИТЬСЯ", foregroundColor: .black, fontSize: 15, alignment: .leading, underline: true)
 						.padding(.bottom, 10)
 					
 				} // Group 2

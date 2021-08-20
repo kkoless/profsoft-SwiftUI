@@ -10,21 +10,16 @@ import SwiftUI
 struct BaseTextField: View {
 	
 	private let placeholder: String
+	private let borderColor: Color
+	private let foregroundColor: Color
 	
-	@Binding private var borderColor: Color
-	@Binding private var foregroundColor: Color
-	@Binding var text: String
+	@Binding private(set) var text: String
 	
-	init(placeholder: String,
-		 text: Binding<String>,
-		 borderColor: Binding<Color>,
-		 foregroundColor: Binding<Color>,
-		 onEditingChanged: @escaping (Bool) -> Void = { _ in },
-		 onCommit: @escaping () -> Void = {}) {
+	init(placeholder: String, text: Binding<String>, borderColor: Color, foregroundColor: Color, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
 		self.placeholder = placeholder
+		self.borderColor = borderColor
+		self.foregroundColor = foregroundColor
 		self._text = text
-		self._borderColor = borderColor
-		self._foregroundColor = foregroundColor
 	}
 	
 	var body: some View {
@@ -54,7 +49,7 @@ extension BaseTextField {
 
 struct BaseTextField_Previews: PreviewProvider {
 	static var previews: some View {
-		BaseTextField(placeholder: "Email", text: .constant("Kirill@gmail.com"), borderColor: .constant(.red), foregroundColor: .constant(.red))
+		BaseTextField(placeholder: "Email", text: .constant("Kirill@gmail.com"), borderColor: .red, foregroundColor: .red)
 	}
 }
 

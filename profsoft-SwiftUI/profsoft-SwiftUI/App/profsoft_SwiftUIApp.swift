@@ -11,10 +11,10 @@ import Combine
 @main
 struct profsoft_SwiftUIApp: App {
 	
-	@StateObject var viewModel = StartScreenViewModel()
-	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+	@StateObject private var viewModel = StartScreenViewModel()
+	@UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 	
-	@State var endSplash: Bool = false
+	@State private var endSplash: Bool = false
 	
 	var body: some Scene {
 		WindowGroup {

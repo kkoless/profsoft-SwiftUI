@@ -14,7 +14,7 @@
 		E500BFC026CAFCAA007B3BDF /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFBF26CAFCAA007B3BDF /* ProfileScreenViewModel.swift */; };
 		E500BFC326CAFD8F007B3BDF /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */; };
 		E500BFC526CB1096007B3BDF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC426CB1096007B3BDF /* ImagePicker.swift */; };
-		E500BFC726CBADC4007B3BDF /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC626CBADC4007B3BDF /* CourseCell.swift */; };
+		E500BFC726CBADC4007B3BDF /* SectionCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC626CBADC4007B3BDF /* SectionCourseCell.swift */; };
 		E500BFC926CBB204007B3BDF /* CourceBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */; };
 		E500BFCB26CBB343007B3BDF /* ShowMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */; };
 		E500BFCE26CBC75F007B3BDF /* Golos Text_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E500BFCD26CBC75F007B3BDF /* Golos Text_Medium.ttf */; };
@@ -64,7 +64,7 @@
 		E500BFBF26CAFCAA007B3BDF /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		E500BFC426CB1096007B3BDF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		E500BFC626CBADC4007B3BDF /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		E500BFC626CBADC4007B3BDF /* SectionCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCourseCell.swift; sourceTree = "<group>"; };
 		E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourceBlockCell.swift; sourceTree = "<group>"; };
 		E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButton.swift; sourceTree = "<group>"; };
 		E500BFCD26CBC75F007B3BDF /* Golos Text_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Golos Text_Medium.ttf"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E500BFC226CAFD8F007B3BDF /* HeaderCell.swift */,
-				E500BFC626CBADC4007B3BDF /* CourseCell.swift */,
+				E500BFC626CBADC4007B3BDF /* SectionCourseCell.swift */,
 				E500BFC826CBB204007B3BDF /* CourceBlockCell.swift */,
 			);
 			path = Cells;
@@ -239,7 +239,7 @@
 		E50EF18526C677D800211D19 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				E50EF18626C677ED00211D19 /* BaseButton.swift */,
+				E51A801426CFE3F00024F991 /* BaseButton */,
 				E500BFCA26CBB343007B3BDF /* ShowMoreButton.swift */,
 			);
 			path = Buttons;
@@ -257,7 +257,7 @@
 		E50EF19126C842A700211D19 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				E50EF19226C842BF00211D19 /* BaseText.swift */,
+				E51A801326CFE3E10024F991 /* BaseText */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -265,11 +265,35 @@
 		E50EF19626C847CD00211D19 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				E50EF19726C847DC00211D19 /* BaseTextField.swift */,
+				E51A801226CFE37A0024F991 /* BaseTextField */,
 				E50EF19926C84B6900211D19 /* PasswordTextField.swift */,
 				E500BFAD26CA6EFE007B3BDF /* EmailTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		E51A801226CFE37A0024F991 /* BaseTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E50EF19726C847DC00211D19 /* BaseTextField.swift */,
+			);
+			path = BaseTextField;
+			sourceTree = "<group>";
+		};
+		E51A801326CFE3E10024F991 /* BaseText */ = {
+			isa = PBXGroup;
+			children = (
+				E50EF19226C842BF00211D19 /* BaseText.swift */,
+			);
+			path = BaseText;
+			sourceTree = "<group>";
+		};
+		E51A801426CFE3F00024F991 /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				E50EF18626C677ED00211D19 /* BaseButton.swift */,
+			);
+			path = BaseButton;
 			sourceTree = "<group>";
 		};
 		E51B403226C51E2E006BFDDA = {
@@ -529,7 +553,7 @@
 				E500BFC326CAFD8F007B3BDF /* HeaderCell.swift in Sources */,
 				E500BFCB26CBB343007B3BDF /* ShowMoreButton.swift in Sources */,
 				E500BFBA26CADA0F007B3BDF /* DashboardScreenViewModel.swift in Sources */,
-				E500BFC726CBADC4007B3BDF /* CourseCell.swift in Sources */,
+				E500BFC726CBADC4007B3BDF /* SectionCourseCell.swift in Sources */,
 				E50C421726CC32D900BB387E /* ServerUser.swift in Sources */,
 				E51B405C26C52545006BFDDA /* StartScreenView.swift in Sources */,
 				E50EF19526C8475A00211D19 /* LoginForm.swift in Sources */,

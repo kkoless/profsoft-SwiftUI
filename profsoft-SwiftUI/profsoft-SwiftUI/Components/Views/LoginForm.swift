@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginForm: View {
 	
-	@Binding var email: String
-	@Binding var password: String
+	@Binding private(set) var email: String
+	@Binding private(set) var password: String
 	
 	var body: some View {
 		content

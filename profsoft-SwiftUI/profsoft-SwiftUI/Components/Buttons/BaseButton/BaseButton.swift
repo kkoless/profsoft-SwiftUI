@@ -9,12 +9,20 @@ import SwiftUI
 
 struct BaseButton: View {
 	
-	let foregroundColor: Color
-	let backgroundColor: Color
-	let borderColor: Color
-	let buttonLabel: String
+	private let foregroundColor: Color
+	private let backgroundColor: Color
+	private let borderColor: Color
+	private let buttonLabel: String
 	
-	let onTap: () -> Void
+	private let onTap: () -> Void
+	
+	init(foregroundColor: Color, backgroundColor: Color, borderColor: Color, buttonLabel: String, onTap: @escaping () -> Void = {}) {
+		self.foregroundColor = foregroundColor
+		self.backgroundColor = backgroundColor
+		self.borderColor = borderColor
+		self.buttonLabel = buttonLabel
+		self.onTap = onTap
+	}
 	
     var body: some View {
 		Button(action: onTap) {

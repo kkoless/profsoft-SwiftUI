@@ -11,7 +11,7 @@ struct PasswordTextField: View {
 	
 	private let passwordPredicate = Consts.DataValidate.passwordPredicate
 	
-	@Binding var password: String
+	@Binding private(set) var password: String
 	@State private var isSecured: Bool = true
 	
 	var body: some View {
@@ -31,7 +31,7 @@ struct PasswordTextField: View {
 							.overlay(RoundedRectangle(cornerRadius: 25).stroke(checkValid() ? Color.black : Color.red, lineWidth: 2))
 					}
 					else {
-						BaseTextField(placeholder: "Пароль", text: $password, borderColor: checkValid() ? .constant(.black): .constant(.red), foregroundColor: checkValid() ? .constant(.black): .constant(.red))
+						BaseTextField(placeholder: "Пароль", text: $password, borderColor: checkValid() ? .black : .red, foregroundColor: checkValid() ? .black : .red)
 					}
 					
 					Button(action: { isSecured.toggle() }) {

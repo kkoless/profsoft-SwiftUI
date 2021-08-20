@@ -10,10 +10,10 @@ import SwiftUI
 struct HeaderCell: View {
 	
 	@State private var showingActionSheet = false
-	@State var showImagePicker: Bool = false
+	@State private var showImagePicker: Bool = false
 	
 	@State private var image = UIImage(named: "userImage")!
-	@State var user: User
+	@State private(set) var user: User
 	
 	var body: some View {
 		content

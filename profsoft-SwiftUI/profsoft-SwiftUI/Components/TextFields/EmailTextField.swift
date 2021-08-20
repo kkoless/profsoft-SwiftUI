@@ -11,7 +11,7 @@ struct EmailTextField: View {
 	
 	private let emailPredicate = Consts.DataValidate.emailPredicate
 	
-	@Binding var email: String
+	@Binding private(set) var email: String
 	
 	var body: some View {
 		
@@ -23,7 +23,7 @@ struct EmailTextField: View {
 				emptyBlock
 			}
 			
-			BaseTextField(placeholder: "Email", text: $email, borderColor: checkValid() ? .constant(.black): .constant(.red), foregroundColor: checkValid() ? .constant(.black): .constant(.red))
+			BaseTextField(placeholder: "Email", text: $email, borderColor: checkValid() ? .black : .red, foregroundColor: checkValid() ? .black : .red)
 			
 		}
 	}

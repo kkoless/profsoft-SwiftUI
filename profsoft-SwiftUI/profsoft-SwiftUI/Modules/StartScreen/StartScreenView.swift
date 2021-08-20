@@ -13,8 +13,7 @@ struct StartScreenView: View {
 	
 	@State private var link: AppStep? = nil
 	
-	@State var animate: Bool = false
-	@State var endSplash: Bool = false
+	@State private var endSplash: Bool = false
 	
 	init(viewModel: StartScreenViewModel) {
 		self.viewModel = viewModel
