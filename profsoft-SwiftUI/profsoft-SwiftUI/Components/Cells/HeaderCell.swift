@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HeaderCell: View {
 	
-	@State private var userImageTap: Bool = false
+	@State private var showingActionSheet = false
 	@State var showImagePicker: Bool = false
-	@State private var image = UIImage(named: "userImage")!
 	
+	@State private var image = UIImage(named: "userImage")!
 	@State var user: User
 	
 	var body: some View {
@@ -22,6 +22,7 @@ struct HeaderCell: View {
 					self.image = image
 				}
 			}
+			
 	}
 	
 }
@@ -43,6 +44,9 @@ extension HeaderCell {
 				.frame(width: 150, height: 150)
 				.background(Image("userImageTap").cornerRadius(15))
 				.cornerRadius(12)
+				.actionSheet(isPresented: $showingActionSheet) {
+					self.actionSheet
+				}
 				
 				VStack(alignment: .leading, spacing: 0) {
 					Text("\(user.firstName) \(user.lastName) \(user.patronymic)")
@@ -77,7 +81,20 @@ extension HeaderCell {
 extension HeaderCell {
 	
 	func onTap() {
-		showImagePicker.toggle()
+		showingActionSheet.toggle()
+	}
+	
+	var actionSheet: ActionSheet {
+		ActionSheet(
+			title: Text(""),
+			buttons: [
+				.default(Text("Сфотографировать")),
+				.default(Text("Загрузить из галереи")) {
+					showImagePicker.toggle()
+				},
+				.cancel(Text("Отмена"))
+			]
+		)
 	}
 	
 }
