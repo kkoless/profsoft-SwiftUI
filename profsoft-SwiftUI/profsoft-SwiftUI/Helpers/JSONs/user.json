@@ -1,0 +1,24 @@
+{
+	"firstName": "КОЖИН",
+	"lastName": "АЛЕКСАНДР",
+	"patronymic": "СЕРГЕЕВИЧ",
+	"email": "kologram@gmail.com",
+	"cources": [
+		{
+			"certificateNumber": "№ 08-09270-7321897",
+			"cource": "Design",
+			"formEducation": "очная",
+			"period": "01.07.2021-30.08.2021",
+			"description": "Создание макетов и прототипов Web и Мобильных приложения для платформ iOS, Android в Figma. Изучение UXPin, практическое применение полученных знаний",
+			"teacher": "Щелкунова Юлия Сергеевна"
+		},
+		{
+			"certificateNumber": "№ 08-09270-7321897",
+			"cource": "Design",
+			"formEducation": "очная",
+			"period": "01.07.2021-30.08.2021",
+			"description": "Создание макетов и прототипов Web и Мобильных приложения для платформ iOS, Android в Figma. Изучение UXPin, практическое применение полученных знаний",
+			"teacher": "Щелкунова Юлия Сергеевна"
+		}
+	]
+}
