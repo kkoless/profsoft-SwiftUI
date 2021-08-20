@@ -23,4 +23,9 @@ enum Consts {
 		static let password = "qwerty1"
 	}
 	
+	enum DataValidate {
+		static let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+		static let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
+	}
+	
 }

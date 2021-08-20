@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PasswordTextField: View {
 	
-	private let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")
+	private let passwordPredicate = Consts.DataValidate.passwordPredicate
 	
 	@Binding var password: String
 	@State private var isSecured: Bool = true

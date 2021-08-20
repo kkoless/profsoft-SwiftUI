@@ -127,7 +127,12 @@ private extension LoginScreenView {
 	}
 	
 	var enterButton: some View {
-		BaseButton(foregroundColor: .white, backgroundColor: .black, borderColor: .black, buttonLabel: "Вход") {
+		BaseButton(
+			foregroundColor: .white,
+			backgroundColor: !changeColorButton() ? .gray : .black,
+			borderColor: !changeColorButton() ? .gray : .black,
+			buttonLabel: "Вход"
+		) {
 			link = isLogin() ? .dashboard : .none
 		}
 	}
@@ -137,6 +142,13 @@ private extension LoginScreenView {
 		let userEmail = Consts.UserCredentials.email
 		
 		return email == userEmail && password == userPassword ? true : false
+	}
+	
+	func changeColorButton() -> Bool {
+		let emailPredicate = Consts.DataValidate.emailPredicate
+		let passwordPredicate = Consts.DataValidate.passwordPredicate
+		
+		return (!emailPredicate.evaluate(with: email) || email.isEmpty) || (!passwordPredicate.evaluate(with: password) || password.isEmpty) ? false : true
 	}
 
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmailTextField: View {
 	
-	private let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+	private let emailPredicate = Consts.DataValidate.emailPredicate
 	
 	@Binding var email: String
 	
