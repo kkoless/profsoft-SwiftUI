@@ -72,6 +72,7 @@ private extension DashboardScreenView {
 				GeneralFlow.build(.profile)
 			}
 			.tabItem {
+				
 				Image("profile")
 			}
 			.navigationBarHidden(true)

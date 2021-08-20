@@ -11,8 +11,7 @@ struct HeaderCell: View {
 	
 	@State private var userImageTap: Bool = false
 	@State var showImagePicker: Bool = false
-	@State private var image = UIImage()
-	@State private var isFirstImage = true
+	@State private var image = UIImage(named: "userImage")!
 	
 	@State var user: User
 	
@@ -35,17 +34,14 @@ extension HeaderCell {
 			
 			HStack(alignment: .bottom, spacing: 0) {
 				
-				Button(action: {
-					showImagePicker.toggle()
-					isFirstImage = false
-				}) {
-					Image(uiImage: isFirstImage ? UIImage(named: "userImage")! : image)
+				Button(action: onTap) {
+					Image(uiImage: image)
 						.resizable()
 						.aspectRatio(contentMode: .fill)
 						.cornerRadius(12)
 				}
 				.frame(width: 150, height: 150)
-				.background(Image("userImageTap"))
+				.background(Image("userImageTap").cornerRadius(15))
 				.cornerRadius(12)
 				
 				VStack(alignment: .leading, spacing: 0) {
@@ -74,6 +70,14 @@ extension HeaderCell {
 		.frame(height: 280, alignment: .bottom)
 		.background(Color(#colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1098039216, alpha: 1)))
 		
+	}
+	
+}
+
+extension HeaderCell {
+	
+	func onTap() {
+		showImagePicker.toggle()
 	}
 	
 }
